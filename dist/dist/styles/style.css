@@ -630,7 +630,10 @@ li p {
     max-width: 90%;
     margin: 0 auto;
 }
-
+button.disabled {
+    background-color: red;
+    cursor: not-allowed;
+  }
 .svg-container {
     display: flex;
     justify-content: space-around;
