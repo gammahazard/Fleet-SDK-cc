@@ -801,48 +801,66 @@ function _mint() {
   return _mint.apply(this, arguments);
 }
 var mintbtn = document.getElementById("mintbtn");
+var mintbtnText = mintbtn.innerText;
 mintbtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-  var disabledClass, msg, unsignedTransaction, signedTransaction, txId;
+  var _unsignedTransaction, signedTransaction, txId;
   return _regeneratorRuntime().wrap(function _callee$(_context) {
     while (1) switch (_context.prev = _context.next) {
       case 0:
-        disabledClass = "disabled"; // Disable the button and show a message
+        _context.prev = 0;
         mintbtn.disabled = true;
-        mintbtn.classList.add(disabledClass);
-        msg = document.createElement("p");
-        msg.innerText = "Please wait while the transaction is being built...";
-        mintbtn.parentNode.insertBefore(msg, mintbtn.nextSibling);
-        _context.next = 8;
+        mintbtn.classList.add("disabled");
+        mintbtn.innerHTML = "<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span> Please wait while the transaction is being built...";
+        _context.next = 6;
         return mint();
-      case 8:
-        unsignedTransaction = _context.sent;
-        if (!unsignedTransaction) {
-          _context.next = 20;
+      case 6:
+        _unsignedTransaction = _context.sent;
+        if (!_unsignedTransaction) {
+          _context.next = 18;
           break;
         }
-        console.log("Unsigned Transaction:", unsignedTransaction);
-        _context.next = 13;
-        return ergo.sign_tx(unsignedTransaction);
-      case 13:
+        console.log("Unsigned Transaction:", _unsignedTransaction);
+        _context.next = 11;
+        return ergo.sign_tx(_unsignedTransaction);
+      case 11:
         signedTransaction = _context.sent;
         console.log("Signed Transaction:", signedTransaction);
-        _context.next = 17;
+        _context.next = 15;
         return ergo.submit_tx(signedTransaction);
-      case 17:
+      case 15:
         txId = _context.sent;
         console.log(txId);
         alert("Transaction submitted. TX ID: ".concat(txId));
+      case 18:
+        _context.next = 24;
+        break;
       case 20:
-        // Re-enable the button and remove the message
+        _context.prev = 20;
+        _context.t0 = _context["catch"](0);
+        console.error("Error minting coins: ".concat(_context.t0));
+        alert("Error minting coins: ".concat(_context.t0));
+      case 24:
+        _context.prev = 24;
         mintbtn.disabled = false;
-        mintbtn.classList.remove(disabledClass);
-        msg.remove();
-      case 23:
+        mintbtn.classList.remove("disabled");
+        mintbtn.innerText = mintbtnText;
+        return _context.finish(24);
+      case 29:
       case "end":
         return _context.stop();
     }
-  }, _callee);
+  }, _callee, null, [[0, 20, 24, 29]]);
 })));
+
+// Add an event listener for beforeunload event
+window.addEventListener("beforeunload", function () {
+  // Check if mintbtn is disabled, and re-enable it
+  if (mintbtn.disabled) {
+    mintbtn.disabled = false;
+    mintbtn.classList.remove("disabled");
+    mintbtn.innerText = mintbtnText;
+  }
+});
 
 /***/ }),
 /* 20 */
