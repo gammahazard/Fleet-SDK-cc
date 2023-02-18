@@ -92,4 +92,4 @@ Call on the mint function when needed to build a transaction:
     }
     });
     
-   The unsignedTransaction can be signed by passing it into ergo.sign_tx(unsignedTransaction) and then submitted using ergo.sumbmit_tx(signedTransaction)
+   The unsignedTransaction can be signed by passing it into ergo.sign_tx(unsignedTransaction) and then submitted using ergo.submit_tx(signedTransaction)
