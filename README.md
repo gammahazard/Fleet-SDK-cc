@@ -50,3 +50,44 @@ Note that "EIP-12" is being passed into the build() function as a parameter, thi
     alert(`Error minting coins: ${error}`);
     }
     }
+
+
+Call on the mint function when needed to build a transaction: 
+
+
+       mintbtn.addEventListener("click", async () => {
+        try {
+        mintbtn.disabled = true;
+        mintbtn.classList.add("disabled");
+        mintbtn.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Please wait while the transaction is               being built...`;
+
+    const unsignedTransaction = await mint();
+    if (unsignedTransaction) {
+      console.log("Unsigned Transaction:", unsignedTransaction);
+      const signedTransaction = await ergo.sign_tx(unsignedTransaction);
+      console.log("Signed Transaction:", signedTransaction);
+      const txId = await ergo.submit_tx(signedTransaction);
+      console.log(txId);
+      alert(`Transaction submitted. TX ID: ${txId}`);
+    }
+    } catch (error) {
+    console.error(`Error minting coins: ${error}`);
+    alert(`Error minting coins: ${error}`);
+    } finally {
+    mintbtn.disabled = false;
+    mintbtn.classList.remove("disabled");
+    mintbtn.innerText = mintbtnText;
+    }
+    });
+
+    // Add an event listener for beforeunload event
+    window.addEventListener("beforeunload", () => {
+    // Check if mintbtn is disabled, and re-enable it
+    if (mintbtn.disabled) {
+    mintbtn.disabled = false;
+    mintbtn.classList.remove("disabled");
+    mintbtn.innerText = mintbtnText;
+    }
+    });
+    
+   The unsignedTransaction can be signed by passing it into ergo.sign_tx(unsignedTransaction) and then submitted using ergo.sumbmit_tx(signedTransaction)
