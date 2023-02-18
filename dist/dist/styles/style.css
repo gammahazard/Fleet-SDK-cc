@@ -135,7 +135,7 @@ body {
     background-color: var(--bg);
 }
 
-img#balanceicon {
+img#balanceicon, #cypxicon {
     width:2.5rem;
     height:2.5rem;
     display:flex;
@@ -146,12 +146,19 @@ img#balanceicon {
 #usertokens {
     font-family:Arial, Helvetica, sans-serif;
 }
-span#userbalance {
+span#userbalance{
 vertical-align:center;
 display:flex;
 font-size:75%;
 
 }
+span#cypxbalance{
+
+    display:flex;
+    font-size:75%;
+    
+    }
+    
 header {
     position: fixed;
     top: 0;
