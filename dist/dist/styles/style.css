@@ -622,7 +622,35 @@ li p {
     margin-top: 1em;
     padding-bottom: 1em;
 }
-
+.ccimage {
+    width:100px;
+    height:100px;
+}
+.assetdescription {
+    font-size:larger;
+    color:var(--pink)
+}
+.assetcont {
+    border:1px solid var(--purple)
+}
+.dashboardcont {
+    display:block;
+    position:absolute;
+    background-color:black;
+    border:1px solid pink;
+    margin-top:15%;
+    margin-left:15%;
+}
+#dashboard {
+    display:block;
+    justify-content:center;
+    align-items:center;
+    text-align:Center;
+}
+.assettitle {
+    font-size:larger;
+    color:yellow;
+}
 .footer-logo-container {
     display: flex;
     justify-content: center;
