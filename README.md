@@ -11,7 +11,7 @@ Building unsigned transaction with Fleet-sdk/core. Note: cypxTokenID can be remo
 
 Edit amountToSend in order to send a different amount.
 
-Note that in "EIP-12" is being passed into the build() function as a parameter, this allows nautilus wallet to recognize the transaction to be signed.
+Note that "EIP-12" is being passed into the build() function as a parameter, this allows nautilus wallet to recognize the transaction to be signed.
 
     import { OutputBuilder, TransactionBuilder } from "@fleet-sdk/core";
 
