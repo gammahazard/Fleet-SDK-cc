@@ -43,7 +43,8 @@ module.exports = {
         { from: 'src/assets', to: 'dist/assets' },
         { from: 'src/pages', to: 'dist/pages' },
         { from: 'src/styles', to: 'dist/styles' },
-         { from: 'src/js', to: 'dist/js' }
+         { from: 'src/js', to: 'dist/js' },
+         { from: 'src/index.html', to: 'index.html' }
       ],
     }),
   ],
