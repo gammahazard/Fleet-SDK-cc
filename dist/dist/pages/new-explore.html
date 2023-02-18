@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search NFT data</title>
+  </head>
+  <body>
+    <form>
+      <label for="input">Enter a number between 0 and 2080:</label>
+      <input type="number" id="input" name="input" min="0" max="2080" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+      const form = document.querySelector('form');
+      const input = document.querySelector('#input');
+      const result = document.querySelector('#result');
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const number = parseInt(input.value, 10);
+        if (isNaN(number) || number < 0 || number > 2080) {
+          result.innerHTML = 'Invalid input';
+        } else {
+          // Load the JSON data and image
+          const jsonPath = `../data/${number}.json`;
+          const imagePath = `../images/${number}.png`;
+          fetch(jsonPath)
+            .then(response => response.json())
+            .then(jsonData => {
+              result.innerHTML = `
+                <div>
+                  <h1>JSON data for input ${number}</h1>
+                  <pre>${JSON.stringify(jsonData, null, 2)}</pre>
+                  <img src="${imagePath}" alt="Image for input ${number}">
+                </div>
+              `;
+            })
+            .catch(error => {
+              result.innerHTML = `Error loading JSON data: ${error}`;
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

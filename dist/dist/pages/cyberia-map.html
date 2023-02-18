@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cyberia-map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+
+    <title>CyberCitizens</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img id="scrollTop" src="../assets/logo-name.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav-links">
+                <li class="desktop-li"><a id="discord-desktop" href="https://discord.com/invite/7FcEFKcKJ7"><img id="header-image"
+                            src="../assets/logo-discord.svg" alt="discord image"></a></li>
+                <li><a id="discord-mobile" href="https://discord.com/invite/7FcEFKcKJ7">Discord</a></li>
+                <li class="desktop-li"><a id="twitter-desktop" href="https://twitter.com/ErgoPixels"><img id="header-image"
+                            src="../assets/logo-twitter.svg" alt="twitter image"></a></li>
+                <li><a id="twitter-mobile" href="https://twitter.com/ErgoPixels">Twitter</a></li>
+                <li><a href="./cyberia-estates.html">Back to estates</a></li>
+                <li><a href="../../index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+
+    <main>
+     
+<section class="locations" id="locations">
+   
+   
+ 
+    <img src = "../assets/Cyberia/newMap.png" class="allaptimgs" id="cyberia-map">
+    <img src="../assets/Cyberia/gunslingerpass.png" class="allaptimgs" id="showgunslinger" alt="apt-0" style="display:none;"/>
+    <img src="../assets/Cyberia/nipopowblock.png" class="allaptimgs" id="shownipopow" alt="apt-1" style="display:none;"/>
+    <img src="../assets/Cyberia/ergoproxy.png" class="allaptimgs" id="showergoproxy" alt="apt-1" style="display:none;"/>
+    <img src="../assets/Cyberia/eden-plaza.png" class="allaptimgs" id="showedenplaza" alt="apt-1" style="display:none;"/>
+    <img src="../assets/Cyberia/sigma-prime.png" class="allaptimgs" id="showsigmaprime" alt="apt-1" style="display:none;"/>
+   
+
+    <input type="text" id="aptnums" onkeyup="aptnumsearch()" placeholder="Input an apartment #.">
+<div class = "apartment-container">
+    <ul id="aptUL">
+      <li class="aptresults" id="results"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#0</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#1</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#2</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#3</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#4</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#5</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#6</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#7</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showedenplaza()">Apartment:<p class="apttext">#8</p>Location:<p class="apttext">Eden Plaza</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#9</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#10</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#11</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#12</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#13</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#14</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#15</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#16</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#17</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#18</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#19</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showedenplaza()">Apartment:<p class="apttext">#20</p>Location:<p class="apttext">Eden Plaza</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#21</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#22</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#23</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#24</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#25</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#26</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#27</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#28</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showedenplaza()">Apartment:<p class="apttext">#29</p>Location:<p class="apttext">Eden Plaza</p>Size:<p class="apttext">Medium</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#30</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#31</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#32</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#33</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#34</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#35</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#36</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#37</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#38</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#39</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#40</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#41</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showsigmaprime()">Apartment:<p class="apttext">#42</p>Location:<p class="apttext">Sigma Prime</p>Size:<p class="apttext">Penthouse</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#43</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#44</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showsigmaprime()">Apartment:<p class="apttext">#45</p>Location:<p class="apttext">Sigma Prime</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showsigmaprime()">Apartment:<p class="apttext">#46</p>Location:<p class="apttext">Sigma Prime</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#47</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showedenplaza()">Apartment:<p class="apttext">#48</p>Location:<p class="apttext">Eden Plaza</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#49</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#50</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#51</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#52</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#53</p>Location:<p class="apttext">NiPoPoW Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#54</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#55</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showsigmaprime()">Apartment:<p class="apttext">#56</p>Location:<p class="apttext">Sigma Prime</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showedenplaza()">Apartment:<p class="apttext">#57</p>Location:<p class="apttext">Eden Plaza</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#58</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#59</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#60</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#61</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showsigmaprime()">Apartment:<p class="apttext">#62</p>Location:<p class="apttext">Sigma Prime</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#63</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#64</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#65</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#66</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#67</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#68</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#69</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#70</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Large</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#71</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#72</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="shownipopow()">Apartment:<p class="apttext">#73</p>Location:<p class="apttext">NiPoPow Block</p>Size:<p class="apttext">Medium</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showgunslinger()">Apartment:<p class="apttext">#74</p>Location:<p class="apttext">Gunslinger Pass</p>Size:<p class="apttext">Small</p> </button></a></li>
+      <li class="aptresults"><a class="apt-link"><button class="showapts" onclick="showergoproxy()">Apartment:<p class="apttext">#75</p>Location:<p class="apttext">Ergo Proxy</p>Size:<p class="apttext">Small</p> </button></a></li>
+
+    </ul>
+</div>
+  
+ 
+
+
+
+</section>
+
+</main>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img class="footer-logo" src="../assets/logo-name.png" alt="ergopixels logo">
+            </div>
+            <div class="svg-container">
+                <a href="https://twitter.com/ErgoPixels"><img class="twitter" src="../assets/logo-twitter.svg"
+                        alt="twitter logo"></a>
+                <a href="https://discord.com/invite/7FcEFKcKJ7"><img class="discord" src="../assets/logo-discord.svg"
+                        alt="discord logo"></a>
+            </div>
+            <div class="footer-text">
+                CyberCitizens is an NFT project by the ERGOPixels team.
+            </div>
+        </div>
+    </footer>
+    <script src="../js/app.js"></script>
+    <script src="../js/map-locations.js"></script>
+
+
+
+</body>
+</html>
