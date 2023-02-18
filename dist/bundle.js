@@ -629,7 +629,7 @@ var mintButton = document.getElementById("mint-button");
 var auctionLink = document.getElementById("auction-link");
 var auctionUrl = "https://www.skyharbor.io/collection/cybercitizens";
 var openMint = false;
-var images = ["../dist/assets/cybercitizens/0.png", "./dist/assets/cybercitizens/3.png", "./dist/assets/cybercitizens/590.png", ".//dist/assets/cybercitizens/1873.png", "./dist/assets/cybercitizens/1852.png", "./dist/assets/cybercitizens/3.png", "./dist/assets/cybercitizens/7.png", "./dist/assets/cybercitizens/590.png"];
+var images = ["./dist/assets/cybercitizens/0.png", "./dist/assets/cybercitizens/3.png", "./dist/assets/cybercitizens/590.png", ".//dist/assets/cybercitizens/1873.png", "./dist/assets/cybercitizens/1852.png", "./dist/assets/cybercitizens/3.png", "./dist/assets/cybercitizens/7.png", "./dist/assets/cybercitizens/590.png"];
 var x = 0;
 if (scrollUp) {
   scrollUp.addEventListener('click', function () {
