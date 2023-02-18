@@ -634,6 +634,9 @@ button.disabled {
     background-color: red;
     cursor: not-allowed;
   }
+  #mintbtn[disabled] {
+    background-color: red;
+  }
 .svg-container {
     display: flex;
     justify-content: space-around;
