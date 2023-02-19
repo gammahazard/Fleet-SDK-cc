@@ -4899,7 +4899,11 @@ function _connect() {
           audioNFTsContainer = document.getElementById("audio-nfts");
           audioNFTsContainer.style.display = "block";
           audioNFTsHTML = '';
-        case 31:
+          audioNFTs.forEach(function (audioNFT) {
+            audioNFTsHTML += "\n      <div>\n        <p class = \"assettitle\">CyberVerse  Audio NFT:</p><p class=\"assetdescription\"> ".concat(audioNFT.name, "</p>\n      </div>\n    ");
+          });
+          audioNFTsContainer.innerHTML = audioNFTsHTML;
+        case 33:
         case "end":
           return _context.stop();
       }
@@ -4941,6 +4945,11 @@ function _displayCypxAmount() {
     }, _callee2);
   }));
   return _displayCypxAmount.apply(this, arguments);
+}
+function formatTime(seconds) {
+  var minutes = Math.floor(seconds / 60);
+  var remainingSeconds = Math.floor(seconds % 60);
+  return "".concat(minutes, ":").concat(remainingSeconds.toString().padStart(2, '0'));
 }
 function displayCybercitizenAssets(_x2) {
   return _displayCybercitizenAssets.apply(this, arguments);
@@ -4995,27 +5004,22 @@ function displayAudioNFTs(_x3) {
 }
 function _displayAudioNFTs() {
   _displayAudioNFTs = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(userAddress) {
-    var response, data, audioNFTs, audioNFTsHTML, audioNFTsElement, playButtons, pauseButtons, playAudio;
+    var response, data, audioNFTs, audioNFTsHTML, audioNFTsElement, playButtons;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
-          playAudio = function _playAudio(assetName) {
-            var formattedAssetName = assetName.replace(/ /g, '_');
-            var audio = new Audio("./dist/assets/audio-dashboard/".concat(formattedAssetName, ".wav"));
-            audio.play();
-          };
-          _context4.next = 3;
+          _context4.next = 2;
           return fetch("https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/".concat(userAddress));
-        case 3:
+        case 2:
           response = _context4.sent;
-          _context4.next = 6;
+          _context4.next = 5;
           return response.json();
-        case 6:
+        case 5:
           data = _context4.sent;
           audioNFTs = [];
           data.items.forEach(function (item) {
             item.assets.forEach(function (asset) {
-              if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia', 'Cyborgstein'].includes(asset.name)) {
+              if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia'].includes(asset.name)) {
                 audioNFTs.push({
                   name: asset.name
                 });
@@ -5024,27 +5028,94 @@ function _displayAudioNFTs() {
           });
           audioNFTsHTML = '';
           audioNFTs.forEach(function (audioNFT) {
-            audioNFTsHTML += "\n        <div class=\"assetcont\">\n        <p class=\"assettitle\">CyberVerse Audio Track:</p>\n        <p class=\"assetdescription\">".concat(audioNFT.name, "</p>\n        <button class=\"play-button\" data-asset=\"").concat(audioNFT.name, "\">Play</button>\n        <button class=\"pause-button\" data-asset=\"").concat(audioNFT.name, "\">Pause</button>\n      </div>\n        ");
+            audioNFTsHTML += "\n          <div class=\"assetcont\">\n            <p class=\"assettitle\">CyberVerse Track Name:</p>\n            <p class=\"assetdescription\">".concat(audioNFT.name, "</p>\n            <button class=\"play-button\" data-asset=\"").concat(audioNFT.name, "\">Play</button>\n            <button class=\"pause-button\" data-asset=\"").concat(audioNFT.name, "\" style=\"display:none;\">Pause</button>\n            <div class=\"seek-container\">\n              <input class=\"seek-bar\" type=\"range\" min=\"0\" step=\"1\" value=\"0\">\n              <span class=\"current-time\">0:00 </span><span>/</span>\n              <span class=\"duration\">0:00</span>\n            </div>\n          </div>\n        ");
           });
           audioNFTsElement = document.getElementById("audio-nfts");
           audioNFTsElement.innerHTML = audioNFTsHTML;
 
-          // add event listener to play buttons
+          // add event listeners to play buttons
           playButtons = document.querySelectorAll('.play-button');
-          pauseButtons = document.querySelectorAll('.pause-button');
           playButtons.forEach(function (button) {
             var assetName = button.dataset.asset;
+            var audio = new Audio("./dist/assets/audio-dashboard/".concat(assetName.replace(/ /g, '_'), ".wav"));
+            var audioPlayer;
+            var seekBar = button.parentElement.querySelector('.seek-bar');
+            var currentTime = button.parentElement.querySelector('.current-time');
+            var duration = button.parentElement.querySelector('.duration');
+            audio.addEventListener('loadedmetadata', function () {
+              duration.textContent = formatTime(audio.duration);
+              seekBar.max = audio.duration;
+            });
+            seekBar.addEventListener('input', function () {
+              currentTime.textContent = formatTime(seekBar.value);
+              audio.currentTime = seekBar.value;
+            });
             button.addEventListener('click', function () {
-              return playAudio(assetName);
+              audio.play();
+              audioPlayer = audio;
+              button.style.display = 'none';
+              button.nextElementSibling.style.display = 'inline-block'; // show the pause button
+            });
+
+            // add event listeners to pause buttons
+            var pauseButtons = document.querySelectorAll('.pause-button');
+            pauseButtons.forEach(function (pauseButton) {
+              pauseButton.addEventListener('click', function () {
+                audioPlayer.pause();
+                pauseButton.style.display = 'none';
+                pauseButton.previousElementSibling.style.display = 'inline-block'; // show the play button
+              });
+            });
+
+            // update seek bar as audio plays
+            audio.addEventListener('timeupdate', function () {
+              seekBar.value = audio.currentTime;
+              currentTime.textContent = formatTime(audio.currentTime);
+            });
+
+            // add event listener to window to check if
+
+            window.addEventListener('blur', function () {
+              audioNFTs.forEach(function (audioNFT) {
+                var audio = new Audio("./dist/assets/audio-dashboard/".concat(audioNFT.name.replace(/ /g, '_'), ".wav"));
+                var isPlaying = false;
+                var duration = 0;
+                var seekBar = null;
+                audio.addEventListener('play', function () {
+                  isPlaying = true;
+                  duration = audio.duration;
+                  seekBar.max = duration;
+                });
+                audio.addEventListener('pause', function () {
+                  isPlaying = false;
+                });
+                audio.addEventListener('timeupdate', function () {
+                  if (isPlaying) {
+                    seekBar.value = audio.currentTime;
+                  }
+                });
+                var playButton = document.querySelector(".play-button[data-asset=\"".concat(audioNFT.name, "\"]"));
+                var pauseButton = document.querySelector(".pause-button[data-asset=\"".concat(audioNFT.name, "\"]"));
+                seekBar = document.querySelector(".seek-bar[data-asset=\"".concat(audioNFT.name, "\"]"));
+                playButton.addEventListener('click', function () {
+                  audio.play();
+                  isPlaying = true;
+                  playButton.style.display = 'none';
+                  pauseButton.style.display = 'inline-block';
+                });
+                pauseButton.addEventListener('click', function () {
+                  audio.pause();
+                  isPlaying = false;
+                  pauseButton.style.display = 'none';
+                  playButton.style.display = 'inline-block';
+                });
+                seekBar.addEventListener('input', function () {
+                  audio.currentTime = seekBar.value;
+                });
+              });
             });
           });
-          pauseButtons.forEach(function (button) {
-            var assetName = button.dataset.asset;
-            button.addEventListener('click', function () {
-              return audio.pause(assetName);
-            });
-          });
-        case 17:
+        case 14:
         case "end":
           return _context4.stop();
       }
