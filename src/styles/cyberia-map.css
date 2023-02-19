@@ -1,0 +1,97 @@
+
+html {
+    --scrollbarBG: transparent;
+    --thumbBG: var(--pink)
+  }
+  body::-webkit-scrollbar {
+    width: 1rem;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 5%;
+    border: 3px solid var(--scrollbarBG);
+  }
+  ul#aptUL::-webkit-scrollbar {
+    width: 1rem;
+  }
+  ul#aptUL{
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  ul#aptUL::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  ul#aptUL::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 25%;
+    border: 3px solid var(--scrollbarBG);
+  }
+  img#cyberia-map {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+    width:65rem;
+    height:65rem;
+}
+  section.locations {
+    background:black;
+}
+  img.allaptimgs {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+    width:65rem;
+    height:65rem;
+}
+  li.aptresults {
+    list-style-type:none;
+    height:auto;
+    display:none;
+    border-radius:2%;
+    border:1px solid var(--pink);
+    margin-left:1rem;
+    margin-right:1rem;
+    margin-bottom:0.5rem;
+}
+  li.aptresults:hover {
+    border: 1px solid var(--yellow);
+    }
+  ul#aptUL {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    overflow-x:scroll;
+}
+  div.apartment-container {
+    margin-bottom:2rem;
+    width:75%;
+}
+  button.showapts {
+    background-color:transparent;
+    color:yellow;
+    font-family:PixelFont;
+    cursor:pointer;
+    width:fit-content;
+    height:100%;
+}
+  a.apt-link {
+    border:none;
+}
+  p.apttext{
+    font-family:PixelFont;
+    font-size:smaller;
+    color:var(--pink)
+}
+@media all and (max-width: 60em) {
+img#cyberia-map {
+display:block;
+background-size:50%;
+}
+}

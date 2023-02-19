@@ -1,0 +1,358 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: none;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#gen1skins {
+  display: inline;
+}
+
+.background-container {
+  width: 90%;
+  margin-inline: auto;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+}
+
+.gen1rarity-backgrounds {
+  display: inline-flex;
+  flex-direction: row;
+
+  border: 1px solid var(--pink);
+  border-radius: 12px;
+
+  width: auto;
+
+  cursor: default;
+
+}
+
+.smallimg {
+  border-radius: 12px;
+}
+
+.gen1rarity-backgrounds:hover {
+  border: 1px solid var(--yellow);
+}
+
+.gen1skincontainer {
+  /* border: 1px solid var(--pink); */
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+}
+
+/*make background animation show up*/
+section#search {
+  background: transparent;
+}
+
+img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+/* text styling */
+p {
+  color: var(--pink);
+}
+
+h3 {
+  color: var(--yellow);
+}
+
+#blue {
+  color: rgb(156, 216, 236);
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
+}
+
+#wine {
+  color: red;
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
+}
+
+#prism {
+  color: #c0b8ee;
+  padding: 1em;
+  cursor: default;
+  min-width: 20vw;
+}
+
+/* search */
+#myInput {
+  background-color: transparent;
+
+  margin-top: 1em;
+  margin-bottom: 12px; 
+  margin-inline: auto;
+
+  text-align: center;
+  font-size: 1rem; 
+  
+  color: var(--pink);
+
+  width: 30%;
+
+  border: 1px solid var(--pink);
+}
+
+/*hide search until input*/
+#myUL li {
+  display: none;
+}
+
+#myUL li a:hover:not(.header) {
+  border: 2px solid var(--yellow);
+}
+::placeholder {
+  color: var(--pink);
+}
+
+div.searchresults {
+  overflow: auto;
+  height: 100vh;
+  width: 100vh;
+  background-color: transparent;
+  margin-bottom: 3%;
+}
+
+/* display for search container*/
+#gen1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 90%;
+  margin: auto;
+
+  gap: 1em;
+}
+
+#gen1 a {
+  margin-top: 1em;
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  margin: 0;
+}
+
+.search-container {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+/* display search in rows */
+#myUL li a {
+  margin-top: -1px; /* Prevent double borders */
+  background-color: transparent;
+  text-decoration: none; /* Remove default text underline */
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 1em;
+
+  font-size: 1rem;
+
+  word-wrap: break-word;
+}
+
+/* footer elongation*/
+div.footer-logo-container {
+  width: 100%;
+}
+
+#search {
+  /* visibility: hidden; */
+}
+
+/* animation */
+.area {
+  z-index: -1;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+.circles-gen1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.circles-gen1 li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+.circles-gen1 li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  background-image: url("../assets/ErgoPixels/011.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  background-image: url("../assets/ErgoPixels/122.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+  background-image: url("../assets/ErgoPixels/039.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+  background-image: url("../assets/ErgoPixels/066.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+  background-image: url("../assets/ErgoPixels/042.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+  background-image: url("../assets/ErgoPixels/065.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+  background-image: url("../assets/ErgoPixels/001.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+  background-image: url("../assets/ErgoPixels/070.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+  background-image: url("../assets/ErgoPixels/106.png");
+  background-size: contain;
+}
+.circles-gen1 li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+  background-image: url("../assets/ErgoPixels/250.png");
+  background-size: contain;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@media all and (max-width : 60em) {
+  div#gen1 {
+    width: 60%;
+  }
+
+  #myInput {
+    width: 90%;
+  }
+
+  .background-container {
+    flex-direction: column;
+  }
+
+  #blue,
+  #wine,
+  #prism {
+    min-width: 90vw;
+  }
+}
+
+@media all and (max-width : 40em) {
+  div#gen1 {
+    width: 25%;
+    margin-inline: auto;
+  }
+  ul#gen1ul {
+    display: block;
+    max-width: 75%;
+    margin-inline: auto;
+  }
+  div#gen1rarity-backgrounds {
+    display: block;
+    max-width: 70%;
+    margin-inline: auto;
+  }
+  h2,
+  p {
+    max-width: 70%;
+    margin-inline: auto;
+  }
+}
+

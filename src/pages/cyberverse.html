@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../styles/styles-cyberverselanding.css">
+    <link rel="stylesheet" href="../styles/cyberverse-landing.css">
+<title>Welcome to the CyberVerse</title>
+<meta name="description" content="Welcome to the CyberVerse: An open world pixel game integrated into the Ergo blockchain." /> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> </head>
+<body>
+<div class="navy">
+    <div class="logo">
+
+    </div>
+    <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+    <nav id="navbarcc">
+
+      <img class="logocclanding" src="../assets/CyberVerseLanding/title-header.png">
+        <ul class="nav-links">
+         
+
+            <li><a class="navfont" href="../../index.html">Home</a></li>
+        
+            <li><a class="navfont" href="#info">Info</a></li>
+            <li><a class="navfont" href="#features">Features</a></li>
+            <li><a class="navfont" href="#title-team">Team</a></li>
+            <li><a class="navfont" href="#map">Map</a></li>
+            <li><a class="navfont" href="#partners">Partners</a></li>
+            <li><a  target="blank" href="https://docs.cyberversegame.io/whitepaper-v3./">Whitepaper V3</a></li>
+        </ul>
+        
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      
+
+      <span></span>
+  </label>
+  <script>
+
+    async function connect() {
+      const ConnectUserWallet = await ergo_request_read_access();
+      const UserAddress = await ergo.get_change_address();
+      const UserBalance = await ergo.get_balance();
+      const UserBalanceErg = UserBalance / 10**9
+      const UserTokens = await ergo.get_utxos()
+      const walletbtn = document.getElementById("walletbtn")
+
+
+
+      let UserTokensStringify = JSON.stringify(UserTokens)
+      ConnectUserWallet;
+      walletbtn.style.display = "none"
+      console.log(UserAddress);
+      console.log(UserBalanceErg);
+
+
+console.log(UserTokensStringify)
+      document.getElementById("userbalance").style.display = "flex";
+      document.getElementById("userbalance").innerHTML = `<img src = "../assets/ergicon.png" id = "balanceicon">   ` + UserBalanceErg 
+
+ 
+
+      
+    
+    
+    }
+
+    </script>
+  <div class="audio-player"> <div class="modal" id="player" style="display:none;">
+
+  
+
+    <!-- Define the section for displaying details -->
+  
+    <!-- Define the section for displaying track buttons -->
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()">
+        <i class="fa fa-step-backward fa-1x"></i>
+      </div>
+      <div class="playpause-track" onclick="playpauseTrack()">
+        <i class="fa fa-play-circle fa-1x"></i>
+      </div>
+      <div class="next-track" onclick="nextTrack()">
+        <i class="fa fa-step-forward fa-1x"></i>
+      </div>
+    </div>
+ 
+    <!-- Define the section for displaying the seek slider-->
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+ 
+    <!-- Define the section for displaying the volume slider-->
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div></div>
+</input>
+</div>
+    <section class="s1-cyberverse">
+    
+        <div class="flex-containers0">
+    
+<img id="title-header-cyberverse" class="cover" src="../assets/CyberVerseLanding/title-header.png"><br>
+
+   <a id="playgameoutline" style="border:none; display:block;"target="blank"  href="https://playcyberverse.com/"><img id="playgame" src="../assets/btn-play.png"></a>
+
+
+
+       
+        </div>
+      </div>
+    </section>
+    <section class="s2-cyberverse" id="info">
+
+<div class="inline-flex-container-desktop">
+        <div class="flex-containers1" id="cyberpixelc">
+            <img id="pixelpeopleimg" src="../assets/CyberVerseLanding/pixel-people.png"> <br>
+  
+                <br><h1 class="s2title" id="pixeltitle">CyberPixels</h1><br><br><BR>
+                
+                       
+                      
+     <ul class="s1-text"><br>CyberPixels($CYPX) is the official token of 
+         CyberCitizens!</ul>
+         <ul class="s1-text">The token will be used for various activities both on our website and within the CyberVerse!</ul>
+
+       
+       
+
+        </div>
+
+<div class="s2contt"></div>
+        <div class="flex-containers1" id="cyberversec">
+            <h1 class="s2title" id="versetitle">CyberVerse</h1>
+            <ul class="s1-text" id="versetext"><br><br><br>The CyberVerse is full of opportunities to
+        live, create, invest, build, explore, make businesses and much more!</ul>
+           
+                <img id="tokenimg" src="../assets/CyberVerseLanding/cypx.png">
+           
+          
+            </div> 
+        </div>
+    </div>
+
+    <div class="inline-flex-container-mobile">
+      <div class="mobileblock" id="cyberpixelcm">
+    
+      <br><h1 class="s2titlem" id="versetitlem">CyberVerse</h1>
+          <ul class="s1-textm"><br><br><br>The CyberVerse is full of opportunities to
+            live, invest, build, explore, make businesses and much more!</ul>
+          <img id="pixelpeopleimgm" src="../assets/CyberVerseLanding/pixel-people.png"> 
+
+             
+
+     
+     
+
+      </div>
+
+<div class="s2contt">
+      <div class="mobileblock" id="cyberpixelcm">
+
+ <span id="s2contspan"> <h1 class="s2titlem" id="pixeltitlem">CyberPixels</h1></div> </span>
+              
+                     
+                    
+          <ul class="s1-textm"><br>CyberPixels($CYPX) is the official token of 
+              CyberCitizens!</ul>
+              <ul class="s1-textm">The token will be used for various activities both on our website and within the CyberVerse!</ul>
+              <img id="tokenimgm" src="../assets/CyberVerseLanding/cypx.png">
+         
+        
+          </div> 
+      </div>
+  </div>
+
+
+
+    </section>
+    <section class="s3-cyberverse" id="features">
+
+ 
+        <div class="container" id="cardcontscroll">
+          <div style="display:block;"><h1 id="gamefeaturestitle">Game Features</div> </h1>
+
+            <ul class="cards" id="featurescard">
+              <li class="card" id="cccard">
+                <div>
+                  <h3 class="card-title" id="cccard">CyberCitizens</h3>
+                  <div class="card-content">
+            
+                    <img class="cardimg" id="cyberimg" src="../assets/CyberVerseLanding/card-cybercitizens.png">
+              
+                   
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p >Playable characters living in the CyberVerse.</p>
+                </div>
+              </li>
+              <li class="card" id="bankcard">
+                <div>
+                  <h3 class="card-title">Bank</h3>
+                  <div class="card-content">
+       <img class="cardimg" src="../assets/CyberVerseLanding/bank1.png">
+                        
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p >Earn staking rewards in the city's bank!</p>
+                </div>
+              </li>
+              <li class="card" id="estatecard">
+                <div>
+                  <h3 class="card-title">Real-Estate</h3>
+                  <div class="card-content">
+                    <img class="cardimg" src="../assets/small-realestate.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p >Buy estate and customize them to your liking.</p>
+                </div>
+              </li>
+              <li class="card" id="musiccard">
+                <div>
+                  <h3 class="card-title">NFT Music</h3>
+                  <div class="card-content">
+                    <img class="cardimgaud" id="audioimgcard" src="../assets/CyberVerseLanding/purple.png">
+                        
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                    <p>Get free music NFTs to listen to ingame by hodling your CyberCitizens</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Marketplace</h3>
+                  <div class="card-content">
+                    <img class="cardimg" id="toolong" src="../assets/CyberVerseLanding/market.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>Marketplace allows individuals to buy and sell NFTs within the city!</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Token</h3>
+                  <div class="card-content">
+                 <img id="cypxtokenimg" class="cardimg" src="../assets/CyberVerseLanding/cypx1token.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>In-game utility token</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Pets</h3>
+                  <div class="card-content">
+                   <img class="cardimg" src="../assets/CyberVerseLanding/eggs.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p >Hatch your CyberEgg</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Lvl Chips</h3>
+                  <div class="card-content">
+                   <img class="cardimg" src="../assets/CyberVerseLanding/xptoken.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>Increase your CyberCitizens' level</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Cyberia</h3>
+                  <div class="card-content">
+                   <img class="cardimg" src="../assets/newMap.png" style="border-radius:50%;">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>Place where CyberCitizens' live</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Museum</h3>
+                  <div class="card-content">
+                    <img class="cardimg" src="../assets/CyberVerseLanding/museum.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>Place where citizens can see historical NFT's and statues of prominent Ergonauts!</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Cyber Treasury</h3>
+                  <div class="card-content">
+                  <img class="cardimg" src="../assets/CyberVerseLanding/treasury.png">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p>Projects community wallet</p>
+                </div>
+              </li>
+              <li class="card">
+                <div>
+                  <h3 class="card-title">Jobs</h3>
+                  <div class="card-content">
+                   <img  class="cardimg" src="../assets/bar-left.webp">
+                  </div>
+                </div>
+                <div class="card-link-wrapper">
+                  <p >Earn money and XP credits by working jobs in the CyberVerse.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+        </div>
+   
+</section>
+
+<section class="s4-cyberverse">
+  <div style="display:block;"><h1 id="title-team">Team</h1></div> 
+
+<div class="container">
+
+
+
+
+  <ul class="cards" id="team-cards">
+    <li class="card" id="cccard">
+      <div>
+
+        <div class="card-content">
+  
+          <img class="cardimg" " src="../assets/CyberVerseLanding/team-pixel.png">
+
+         
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+    <li class="card" id="bankcard">
+      <div>
+
+        <div class="card-content">
+<img class="cardimg" src="../assets/CyberVerseLanding/team-breehze.png">
+              
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+    <li class="card">
+      <div>
+  
+        <div class="card-content">
+       <img id="cardimg" class="cardimg2" src="../assets/CyberVerseLanding/team-hazey.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+
+    <li class="card">
+      <div>
+  
+        <div class="card-content">
+       <img id="cardimg" class="cardimg3" src="../assets/CyberVerseLanding/team-kraservice.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+
+
+    <li class="card" id="estatecard">
+      <div>
+
+        <div class="card-content">
+          <img class="cardimg" src="../assets/CyberVerseLanding/team-hero.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+    <li class="card" id="musiccard">
+      <div>
+
+        <div class="card-content">
+          <img class="cardimg" id="audioimgcard" src="../assets/CyberVerseLanding/team-mongo.png">
+              
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+    <li class="card">
+      <div>
+    
+        <div class="card-content">
+          <img class="cardimg" id="toolong" src="../assets/CyberVerseLanding/team-matheo.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+    
+      </div>
+    </li>
+    <li class="card">
+      <div>
+  
+        <div class="card-content">
+       <img id="cardimg" class="cardimg" src="../assets/CyberVerseLanding/team-iriss.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+
+      </div>
+    </li>
+    <li class="card">
+      <div>
+  
+        <div class="card-content">
+         <img class="cardimg" src="../assets/CyberVerseLanding/team-kohari.png">
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+      
+      </div>
+      
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ul>
+</div>
+</div>
+    
+
+
+
+
+
+</section>
+
+<section class="s5-cyberverse" id="map">
+<h1>Cyberia Map V1</h1>
+<img src="../assets/newMap.png" id="newmap">
+<a id="exploremap" target="blank" href="https://cybercitizens.io/pages/cyberia-map.html">Explore Real-estate</a>
+</section>
+
+
+
+<section class="s6-cyberverse" id="partners">
+  <h1>Our Partners</h1>
+<div class="inline-flex-containerp">
+
+
+  <div class="partnercont" id="ergopadcont"><img class="partnerimg" id="ergopadimg" src="../assets/CyberVerseLanding/ergopad.png"><br>
+<a id = "ergopadlink" href="https://ergopad.io" target='blank'>ErgoPad</a></div>
+
+
+  <div class="partnercont" id="egiocont"><img class="partnerimg" id="egioimg"src="../assets/CyberVerseLanding/egio.png"><br>
+  <a id = "ergogameslink" href="https://ergogames.io" target='blank'>ErgoGames</a></div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+</main>
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo-container">
+            <img class="footer-logo"id="cyberverselogopic" src="../assets/CyberVerseLanding/title-header.png" alt="CyberVerse logo">
+        </div>
+        <div class="svg-container">
+            <a href="https://twitter.com/CyberVerse_io" target="blank"><img  id="twittercb" src="../assets/CyberVerseLanding/logotwitter.png"
+                    alt="twitter logo"></a>
+            <a href="https://discord.com/invite/7FcEFKcKJ7" target="blank"><img  id="twittercb" src="../assets/CyberVerseLanding/logodisc.png"
+                    alt="discord logo"></a>
+        </div>
+        <div class="footer-text">
+           Powered by <a id="pergo" target="blank" href = "https://ergoplatform.org">Ergo</a>
+        </div>
+    </div>
+</footer>
+<script src="../js/sidescroll.js"></script>
+<script src="../js/sidescrollx.js"></script>
+<script src="../js/audio-player.js"></script>
+</body>
+
+</html>

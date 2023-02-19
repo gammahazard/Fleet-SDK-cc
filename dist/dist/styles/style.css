@@ -641,7 +641,10 @@ li p {
     margin-top:15%;
     margin-left:15%;
 }
-#dashboard {
+.play-button {
+    background-color:Yellow;
+}
+#dashboard, #audio-nfts {
     display:block;
     justify-content:center;
     align-items:center;

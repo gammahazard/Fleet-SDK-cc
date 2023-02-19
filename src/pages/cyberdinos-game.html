@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cyber-dino.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <title>CyberDinos</title>
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img id="explorerToHome" id="scrollTop" src="../assets/logo-name.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><img src="../assets/wallet.svg" id="wallet"/></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+    <!-- Wallet Start -->
+    <div id="wallet-connector">
+        <p>To use your wallet on CyberCitizens, please copy your receiving address into the input below and press enter.
+        </p>
+        <p>Your recieving address will be used for prizes, rewards and airdrops. In the future, your address will be
+            able to
+            be used to place bids on our auctions.</p>
+        <p id="wallet-address-text">Address</p>
+        <input type="text" name="address" id="user-address" class="invalid">
+        <p id="wallet-output">Invalid wallet address.</p>
+        <div id="wallet-buttons">
+            <button class="wallet-button" id="clear">Clear</button>
+            <button class="wallet-button" id="exit">Exit</button>
+            <button class="wallet-button" id="finish">Finish</button>
+        </div>
+    </div>
+    <!-- Wallet End -->
+    <main>
+        <div id="dino-game">
+            <h1 class="main-header">CyberDino</h1>
+            <h2 id="loading-message">Please wait while the game is loaded...</h2>
+            <button id="leaderboard-toggle">Leaderboard</button>
+        </div>
+        <br>
+
+        <div id="Skin-Selection">
+            <div id="Skins">
+
+            </div>
+            <button id="Select-Skin">Set Skin</button>
+        </div>
+
+
+        <div id="leaderboard-container" class="container">
+        </div>
+    </main>
+    <script type="module" src="../js/DinoConnector.js"></script>
+    <script type="module" src="../js/wallet-dist.js"></script>
+</body>
+</html>
