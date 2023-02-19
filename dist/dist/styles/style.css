@@ -454,8 +454,13 @@ section h2 {
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
 
+  }
+#closedashboard {
+    position:absolute;
+    margin-left:12%;
+    margin-top:14%;
+}
 .container-mint h3 {
     color: var(--yellow);
     margin-bottom: 0;

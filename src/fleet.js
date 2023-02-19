@@ -73,3 +73,5 @@ window.addEventListener("beforeunload", () => {
     mintbtn.innerText = mintbtnText;
   }
 });
+
+

@@ -14,12 +14,14 @@ const connectbtn = document.getElementById("connectbtn")
 async function connect() {
   const ConnectUserWallet = await ergoConnector.nautilus.connect();
   ConnectUserWallet;
+
   const UserAddress = await ergo.get_change_address();
   const cypxAmount = await displayCypxAmount(UserAddress);
   const mintbtn = document.getElementById("mintbtn");
   const UserBalance = await ergo.get_balance();
   const UserBalanceErg = UserBalance / 10**9;
-
+  const dashboardbtn = document.getElementById("dashboardbtn")
+  dashboardbtn.style.display = "flex"
   connectbtn.style.display = "none";
   console.log(UserAddress);
   console.log(UserBalanceErg);
@@ -247,5 +249,15 @@ async function connect() {
     
 
     )}
-
+    const displaybtn = document.getElementById("dashboardbtn")
+    displaybtn.addEventListener ("click", async() => {
+    
+        dashboardmodal.style.display = "block"
+     
+    })
+    const closebtn = document.getElementById("closedashboard")
+    closebtn.addEventListener ("click", async() => {
+      dashboardmodal.style.display = "none"
+    })
+    
     connectbtn.addEventListener("click", connect);
