@@ -461,6 +461,9 @@ section h2 {
     margin-left:12%;
     margin-top:14%;
 }
+#dashboardbtn:hover {
+cursor:pointer;
+}
 .container-mint h3 {
     color: var(--yellow);
     margin-bottom: 0;
