@@ -2,7 +2,11 @@ View here: https://gammahazard.github.io/Fleet-SDK-cc/dist/index.html
 
 Webpack bundled CyberCitizens source code with Fleet-SDK Transaction Builder implemented in order to send custom transactions via ERGO blockchain using a valid ERGO wallet.
 
-Content is bundled from "src" folder into "dist", src is not provided in this code
+Content is bundled from "src" folder into "dist",  
+
+use npm run build to copy contents of "src" and bundle into "dist"
+
+find original javascript files for the transaction builder in the src folder, under "fleet.js"
 
 In use: 
 
