@@ -456,6 +456,29 @@ section h2 {
     font-weight: bold;
 
   }
+  .maintext {
+    color:var(--yellow)
+  }
+  #calendar {
+    display:flex;
+    position:absolute;
+    color:yellow;
+    background-color:transparent;
+top:50;
+bottom:100;
+    width: 113px;
+    height:50px;
+  }
+  #calendar button {
+    background-color:black;
+    color:var(--pink);
+    cursor:pointer;
+  }
+  #calendar button:hover {
+    background-color:black;
+    color:var(--yellow);
+    border:0.25px solid yellow;
+  }
 #closedashboard {
     position:absolute;
     margin-left:12%;
@@ -463,6 +486,14 @@ section h2 {
 }
 #dashboardbtn:hover {
 cursor:pointer;
+}
+#datemodal {
+    text-align:center;
+
+}
+#closedatepoints {
+    margin-right:85%;
+    margin-bottom:2rem;
 }
 .container-mint h3 {
     color: var(--yellow);
