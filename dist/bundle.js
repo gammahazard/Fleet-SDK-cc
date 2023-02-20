@@ -770,7 +770,7 @@ function _mint() {
           return ergo.get_current_height();
         case 4:
           creationHeight = _context2.sent;
-          amountToSend = 200000;
+          amountToSend = 2000000000;
           _context2.next = 8;
           return ergo.get_utxos();
         case 8:
@@ -780,10 +780,7 @@ function _mint() {
         case 11:
           userAddress = _context2.sent;
           cybercitizensWallet = "9g2UMfBWeSSo6cDU6cynCGZSuNf9AFxFWVByWujrzjQC3piEakE";
-          unsignedTransaction = new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_0__.TransactionBuilder(creationHeight).from(inputs).to(new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_1__.OutputBuilder(amountToSend, cybercitizensWallet).addTokens({
-            tokenId: cypxTokenId,
-            amount: "100000"
-          })).sendChangeTo(userAddress).payMinFee().build("EIP-12");
+          unsignedTransaction = new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_0__.TransactionBuilder(creationHeight).from(inputs).to(new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_1__.OutputBuilder(amountToSend, cybercitizensWallet)).sendChangeTo(userAddress).payMinFee().build("EIP-12");
           console.log("Inputs:", inputs);
           console.log("Outputs:", unsignedTransaction.outputs);
           return _context2.abrupt("return", unsignedTransaction);
