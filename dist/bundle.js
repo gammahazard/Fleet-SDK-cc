@@ -6257,28 +6257,29 @@ function connect() {
 }
 function _connect() {
   _connect = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-    var ConnectUserWallet, UserAddress, cypxAmount, mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML;
+    var ConnectUserWallet, UserAddress, cypxAmount, _mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.next = 2;
+          _context3.prev = 0;
+          _context3.next = 3;
           return ergoConnector.nautilus.connect();
-        case 2:
+        case 3:
           ConnectUserWallet = _context3.sent;
           ConnectUserWallet;
           document.getElementById("calendar").style.display = "flex";
-          _context3.next = 7;
+          _context3.next = 8;
           return ergo.get_change_address();
-        case 7:
+        case 8:
           UserAddress = _context3.sent;
-          _context3.next = 10;
+          _context3.next = 11;
           return displayCypxAmount(UserAddress);
-        case 10:
+        case 11:
           cypxAmount = _context3.sent;
-          mintbtn = document.getElementById("mintbtn");
-          _context3.next = 14;
+          _mintbtn = document.getElementById("mintbtn");
+          _context3.next = 15;
           return ergo.get_balance();
-        case 14:
+        case 15:
           UserBalance = _context3.sent;
           UserBalanceErg = UserBalance / Math.pow(10, 9);
           dashboardbtn = document.getElementById("dashboardbtn");
@@ -6289,9 +6290,9 @@ function _connect() {
           document.getElementById("userbalance").style.display = "flex";
           document.getElementById("userbalance").innerHTML = "<img src=\"./dist/assets/ergicon.png\" id=\"balanceicon\">   " + UserBalanceErg;
           document.getElementById("cypxbalance").innerHTML = "<img src=\"./dist/assets/cypxicon.png\" id=\"cypxicon\">" + cypxAmount / Math.pow(10, 4);
-          _context3.next = 26;
+          _context3.next = 27;
           return displayCybercitizenAssets(UserAddress);
-        case 26:
+        case 27:
           assets = _context3.sent;
           assetsHTML = ''; // const audioNFTs = await displayAudioNFTs(UserAddress);
           // const audioNFTsContainer = document.getElementById("audio-nfts");
@@ -6305,11 +6306,21 @@ function _connect() {
           //   `;
           // });
           // audioNFTsContainer.innerHTML = audioNFTsHTML;
-        case 28:
+          _context3.next = 34;
+          break;
+        case 31:
+          _context3.prev = 31;
+          _context3.t0 = _context3["catch"](0);
+          if (_context3.t0.message.includes("ergoConnector")) {
+            alert("Please download Nautilus wallet here: https://chrome.google.com/webstore/detail/nautilus-wallet/gjlmehlldlphhljhpnlddaodbjjcchai");
+          } else {
+            console.log(_context3.t0);
+          }
+        case 34:
         case "end":
           return _context3.stop();
       }
-    }, _callee3);
+    }, _callee3, null, [[0, 31]]);
   }));
   return _connect.apply(this, arguments);
 }
