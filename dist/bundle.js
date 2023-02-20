@@ -6257,7 +6257,7 @@ function connect() {
 }
 function _connect() {
   _connect = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-    var ConnectUserWallet, UserAddress, cypxAmount, mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML, audioNFTs, audioNFTsContainer, audioNFTsHTML;
+    var ConnectUserWallet, UserAddress, cypxAmount, mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
@@ -6293,19 +6293,19 @@ function _connect() {
           return displayCybercitizenAssets(UserAddress);
         case 26:
           assets = _context3.sent;
-          assetsHTML = '';
-          _context3.next = 30;
-          return displayAudioNFTs(UserAddress);
-        case 30:
-          audioNFTs = _context3.sent;
-          audioNFTsContainer = document.getElementById("audio-nfts");
-          audioNFTsContainer.style.display = "block";
-          audioNFTsHTML = '';
-          audioNFTs.forEach(function (audioNFT) {
-            audioNFTsHTML += "\n      <div>\n        <p class = \"assettitle\">CyberVerse  Audio NFT:</p><p class=\"assetdescription\"> ".concat(audioNFT.name, "</p>\n      </div>\n    ");
-          });
-          audioNFTsContainer.innerHTML = audioNFTsHTML;
-        case 36:
+          assetsHTML = ''; // const audioNFTs = await displayAudioNFTs(UserAddress);
+          // const audioNFTsContainer = document.getElementById("audio-nfts");
+          // audioNFTsContainer.style.display = "block";
+          // let audioNFTsHTML = '';
+          // audioNFTs.forEach((audioNFT) => {
+          //   audioNFTsHTML += `
+          //     <div>
+          //       <p class = "assettitle">CyberVerse  Audio NFT:</p><p class="assetdescription"> ${audioNFT.name}</p>
+          //     </div>
+          //   `;
+          // });
+          // audioNFTsContainer.innerHTML = audioNFTsHTML;
+        case 28:
         case "end":
           return _context3.stop();
       }
@@ -6355,7 +6355,116 @@ function formatTime(seconds) {
 }
 function displayCybercitizenAssets(_x2) {
   return _displayCybercitizenAssets.apply(this, arguments);
-}
+} // async function displayAudioNFTs(userAddress) {
+//   const response = await fetch(`https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/${userAddress}`);
+//   const data = await response.json();
+//   const audioNFTs = [];
+//   data.items.forEach((item) => {
+//     item.assets.forEach((asset) => {
+//       if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia'].includes(asset.name)) {
+//         audioNFTs.push({
+//           name: asset.name,
+//         });
+//       }
+//     });
+//   });
+//   let audioNFTsHTML = '';
+//   audioNFTs.forEach((audioNFT) => {
+//     audioNFTsHTML += `
+//       <div class="assetcont">
+//         <p class="assettitle">CyberVerse Track Name:</p>
+//         <p class="assetdescription">${audioNFT.name}</p>
+//         <button class="play-button" data-asset="${audioNFT.name}">Play</button>
+//         <button class="pause-button" data-asset="${audioNFT.name}" style="display:none;">Pause</button>
+//         <div class="seek-container">
+//           <input class="seek-bar" type="range" min="0" step="1" value="0">
+//           <span class="current-time">0:00 </span><span>/</span>
+//           <span class="duration">0:00</span>
+//         </div>
+//       </div>
+//     `;
+//   });
+//   //const audioNFTsElement = document.getElementById("audio-nfts");
+//   //audioNFTsElement.innerHTML = audioNFTsHTML;
+//   // add event listeners to play buttons
+//   const playButtons = document.querySelectorAll('.play-button');
+//   playButtons.forEach(button => {
+//     const assetName = button.dataset.asset;
+//     const audio = new Audio(`./dist/assets/audio-dashboard/${assetName.replace(/ /g, '_')}.wav`);
+//     let audioPlayer;
+//     const seekBar = button.parentElement.querySelector('.seek-bar');
+//     const currentTime = button.parentElement.querySelector('.current-time');
+//     const duration = button.parentElement.querySelector('.duration');
+//     audio.addEventListener('loadedmetadata', () => {
+//       duration.textContent = formatTime(audio.duration);
+//       seekBar.max = audio.duration;
+//     });
+//     seekBar.addEventListener('input', () => {
+//       currentTime.textContent = formatTime(seekBar.value);
+//       audio.currentTime = seekBar.value;
+//     });
+//     button.addEventListener('click', () => {
+//       audio.play();
+//       audioPlayer = audio;
+//       button.style.display = 'none';
+//       button.nextElementSibling.style.display = 'inline-block'; // show the pause button
+//     });
+//     // add event listeners to pause buttons
+//     const pauseButtons = document.querySelectorAll('.pause-button');
+//     pauseButtons.forEach(pauseButton => {
+//       pauseButton.addEventListener('click', () => {
+//         audioPlayer.pause();
+//         pauseButton.style.display = 'none';
+//         pauseButton.previousElementSibling.style.display = 'inline-block'; // show the play button
+//       });
+//     });
+//     // update seek bar as audio plays
+//     audio.addEventListener('timeupdate', () => {
+//       seekBar.value = audio.currentTime;
+//       currentTime.textContent = formatTime(audio.currentTime);
+//     });
+//     // add event listener to window to check if
+// window.addEventListener('blur', () => {
+// audioNFTs.forEach(audioNFT => {
+// const audio = new Audio(`./dist/assets/audio-dashboard/${audioNFT.name.replace(/ /g, '_')}.wav`);
+// let isPlaying = false;
+// let duration = 0;
+// let seekBar = null;
+//   audio.addEventListener('play', () => {
+//     isPlaying = true;
+//     duration = audio.duration;
+//     seekBar.max = duration;
+//   });
+//   audio.addEventListener('pause', () => {
+//     isPlaying = false;
+//   });
+//   audio.addEventListener('timeupdate', () => {
+//     if (isPlaying) {
+//       seekBar.value = audio.currentTime;
+//     }
+//   });
+//   const playButton = document.querySelector(`.play-button[data-asset="${audioNFT.name}"]`);
+//   const pauseButton = document.querySelector(`.pause-button[data-asset="${audioNFT.name}"]`);
+//   seekBar = document.querySelector(`.seek-bar[data-asset="${audioNFT.name}"]`);
+//   playButton.addEventListener('click', () => {
+//     audio.play();
+//     isPlaying = true;
+//     playButton.style.display = 'none';
+//     pauseButton.style.display = 'inline-block';
+//   });
+//   pauseButton.addEventListener('click', () => {
+//     audio.pause();
+//     isPlaying = false;
+//     pauseButton.style.display = 'none';
+//     playButton.style.display = 'inline-block';
+//   });
+//   seekBar.addEventListener('input', () => {
+//     audio.currentTime = seekBar.value;
+//   });
+// });
+// });
+// }
+//)}
 function _displayCybercitizenAssets() {
   _displayCybercitizenAssets = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(userAddress) {
     var response, data, cybercitizenAssets, assetsHTML, dashboard;
@@ -6400,130 +6509,6 @@ function _displayCybercitizenAssets() {
     }, _callee5);
   }));
   return _displayCybercitizenAssets.apply(this, arguments);
-}
-function displayAudioNFTs(_x3) {
-  return _displayAudioNFTs.apply(this, arguments);
-}
-function _displayAudioNFTs() {
-  _displayAudioNFTs = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(userAddress) {
-    var response, data, audioNFTs, audioNFTsHTML, audioNFTsElement, playButtons;
-    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
-        case 0:
-          _context6.next = 2;
-          return fetch("https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/".concat(userAddress));
-        case 2:
-          response = _context6.sent;
-          _context6.next = 5;
-          return response.json();
-        case 5:
-          data = _context6.sent;
-          audioNFTs = [];
-          data.items.forEach(function (item) {
-            item.assets.forEach(function (asset) {
-              if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia'].includes(asset.name)) {
-                audioNFTs.push({
-                  name: asset.name
-                });
-              }
-            });
-          });
-          audioNFTsHTML = '';
-          audioNFTs.forEach(function (audioNFT) {
-            audioNFTsHTML += "\n          <div class=\"assetcont\">\n            <p class=\"assettitle\">CyberVerse Track Name:</p>\n            <p class=\"assetdescription\">".concat(audioNFT.name, "</p>\n            <button class=\"play-button\" data-asset=\"").concat(audioNFT.name, "\">Play</button>\n            <button class=\"pause-button\" data-asset=\"").concat(audioNFT.name, "\" style=\"display:none;\">Pause</button>\n            <div class=\"seek-container\">\n              <input class=\"seek-bar\" type=\"range\" min=\"0\" step=\"1\" value=\"0\">\n              <span class=\"current-time\">0:00 </span><span>/</span>\n              <span class=\"duration\">0:00</span>\n            </div>\n          </div>\n        ");
-          });
-          audioNFTsElement = document.getElementById("audio-nfts");
-          audioNFTsElement.innerHTML = audioNFTsHTML;
-
-          // add event listeners to play buttons
-          playButtons = document.querySelectorAll('.play-button');
-          playButtons.forEach(function (button) {
-            var assetName = button.dataset.asset;
-            var audio = new Audio("./dist/assets/audio-dashboard/".concat(assetName.replace(/ /g, '_'), ".wav"));
-            var audioPlayer;
-            var seekBar = button.parentElement.querySelector('.seek-bar');
-            var currentTime = button.parentElement.querySelector('.current-time');
-            var duration = button.parentElement.querySelector('.duration');
-            audio.addEventListener('loadedmetadata', function () {
-              duration.textContent = formatTime(audio.duration);
-              seekBar.max = audio.duration;
-            });
-            seekBar.addEventListener('input', function () {
-              currentTime.textContent = formatTime(seekBar.value);
-              audio.currentTime = seekBar.value;
-            });
-            button.addEventListener('click', function () {
-              audio.play();
-              audioPlayer = audio;
-              button.style.display = 'none';
-              button.nextElementSibling.style.display = 'inline-block'; // show the pause button
-            });
-
-            // add event listeners to pause buttons
-            var pauseButtons = document.querySelectorAll('.pause-button');
-            pauseButtons.forEach(function (pauseButton) {
-              pauseButton.addEventListener('click', function () {
-                audioPlayer.pause();
-                pauseButton.style.display = 'none';
-                pauseButton.previousElementSibling.style.display = 'inline-block'; // show the play button
-              });
-            });
-
-            // update seek bar as audio plays
-            audio.addEventListener('timeupdate', function () {
-              seekBar.value = audio.currentTime;
-              currentTime.textContent = formatTime(audio.currentTime);
-            });
-
-            // add event listener to window to check if
-
-            window.addEventListener('blur', function () {
-              audioNFTs.forEach(function (audioNFT) {
-                var audio = new Audio("./dist/assets/audio-dashboard/".concat(audioNFT.name.replace(/ /g, '_'), ".wav"));
-                var isPlaying = false;
-                var duration = 0;
-                var seekBar = null;
-                audio.addEventListener('play', function () {
-                  isPlaying = true;
-                  duration = audio.duration;
-                  seekBar.max = duration;
-                });
-                audio.addEventListener('pause', function () {
-                  isPlaying = false;
-                });
-                audio.addEventListener('timeupdate', function () {
-                  if (isPlaying) {
-                    seekBar.value = audio.currentTime;
-                  }
-                });
-                var playButton = document.querySelector(".play-button[data-asset=\"".concat(audioNFT.name, "\"]"));
-                var pauseButton = document.querySelector(".pause-button[data-asset=\"".concat(audioNFT.name, "\"]"));
-                seekBar = document.querySelector(".seek-bar[data-asset=\"".concat(audioNFT.name, "\"]"));
-                playButton.addEventListener('click', function () {
-                  audio.play();
-                  isPlaying = true;
-                  playButton.style.display = 'none';
-                  pauseButton.style.display = 'inline-block';
-                });
-                pauseButton.addEventListener('click', function () {
-                  audio.pause();
-                  isPlaying = false;
-                  pauseButton.style.display = 'none';
-                  playButton.style.display = 'inline-block';
-                });
-                seekBar.addEventListener('input', function () {
-                  audio.currentTime = seekBar.value;
-                });
-              });
-            });
-          });
-        case 14:
-        case "end":
-          return _context6.stop();
-      }
-    }, _callee6);
-  }));
-  return _displayAudioNFTs.apply(this, arguments);
 }
 var displaybtn = document.getElementById("dashboardbtn");
 displaybtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
