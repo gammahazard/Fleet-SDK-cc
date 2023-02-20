@@ -842,7 +842,10 @@ button.disabled {
 .wallet-button:hover {
     border: 2px #258ae8 solid;
 }
-
+#connectbtn {
+    background-color:transparent;
+    color:yellow;
+}
 #finish {
     background-color: #258ae8;
     border: 2px #258ae8 solid;
@@ -936,6 +939,9 @@ li #header-image {
         width:100%;
         overflow-x:hidden;
         
+    }
+    #wallet-btn {
+        display:none;
     }
 iframe#iframetrailer {
     width:75%;
