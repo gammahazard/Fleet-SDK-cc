@@ -122,7 +122,11 @@ html {
     font-family: pixelFont;
     scroll-behavior: smooth;
 }
-
+#monthdisplay {
+    font-size:x-small;
+  
+ 
+}
 body {
     margin: 0;
     padding: 0;
@@ -134,7 +138,10 @@ body {
 
     background-color: var(--bg);
 }
+#statsdisplay {
+   color:var(--pink);
 
+}
 img#balanceicon, #cypxicon {
     width:2.5rem;
     height:2.5rem;
@@ -165,7 +172,7 @@ header {
     left: 0;
     background-color: var(--bg-header);
     width: 100vw;
-
+z-index:999;
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
 }
@@ -173,7 +180,9 @@ header {
 span {
     color: var(--pink);
 }
-
+a#dashboardbtn {
+    font-size:smaller;
+}
 .nav-links {
     text-transform: uppercase;
     margin: 0;
@@ -464,7 +473,8 @@ section h2 {
     position:absolute;
     color:yellow;
     background-color:transparent;
-top:50;
+top:75;
+z-index:50;
 bottom:100;
     width: 113px;
     height:50px;
@@ -473,11 +483,13 @@ bottom:100;
     background-color:black;
     color:var(--pink);
     cursor:pointer;
+    padding:2.5px;
+    margin:0.25px;
   }
   #calendar button:hover {
     background-color:black;
     color:var(--yellow);
-    border:0.25px solid yellow;
+
   }
 #closedashboard {
     position:absolute;
@@ -489,6 +501,7 @@ cursor:pointer;
 }
 #datemodal {
     text-align:center;
+    background-color:black;
 
 }
 #closedatepoints {
