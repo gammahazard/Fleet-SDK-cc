@@ -779,7 +779,7 @@ function _mint() {
           return ergo.get_change_address();
         case 11:
           userAddress = _context2.sent;
-          cybercitizensWallet = "9g2UMfBWeSSo6cDU6cynCGZSuNf9AFxFWVByWujrzjQC3piEakE";
+          cybercitizensWallet = "9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf";
           unsignedTransaction = new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_0__.TransactionBuilder(creationHeight).from(inputs).to(new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_1__.OutputBuilder(amountToSend, cybercitizensWallet)).sendChangeTo(userAddress).payMinFee().build("EIP-12");
           console.log("Inputs:", inputs);
           console.log("Outputs:", unsignedTransaction.outputs);
