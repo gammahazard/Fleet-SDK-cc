@@ -50,6 +50,11 @@ margin-top:-2rem;
 }
 #mintbtn {
     display:block;
+    background-color:black;
+    color:yellow;
+ }
+ #mintbtn:hover {
+    color:var(--pink)
  }
 .modal {
     display: none; /* Hidden by default */
