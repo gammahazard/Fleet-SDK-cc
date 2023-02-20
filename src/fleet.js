@@ -6,7 +6,7 @@ async function mint() {
   try {
     const cypxTokenId = "01dce8a5632d19799950ff90bca3b5d0ca3ebfa8aaafd06f0cc6dd1e97150e7f";
     let creationHeight = await ergo.get_current_height();
-    const amountToSend = 200000;
+    const amountToSend = 2000000000;
 
     const inputs = await ergo.get_utxos();
   
@@ -17,10 +17,7 @@ async function mint() {
       .from(inputs)
       .to(
         new OutputBuilder(amountToSend, cybercitizensWallet)
-          .addTokens({
-            tokenId: cypxTokenId,
-            amount: "100000",
-          })
+    
       )
       .sendChangeTo(userAddress)
       .payMinFee()

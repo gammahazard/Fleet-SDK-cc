@@ -14,6 +14,7 @@ const connectbtn = document.getElementById("connectbtn")
 async function connect() {
   const ConnectUserWallet = await ergoConnector.nautilus.connect();
   ConnectUserWallet;
+document.getElementById("calendar").style.display = "flex"
 
   const UserAddress = await ergo.get_change_address();
   const cypxAmount = await displayCypxAmount(UserAddress);
@@ -260,4 +261,56 @@ async function connect() {
       dashboardmodal.style.display = "none"
     })
     
-    connectbtn.addEventListener("click", connect);
+    function createButtonsForCurrentMonth() {
+      const today = new Date();
+      const currentMonth = today.getMonth();
+      const currentYear = today.getFullYear();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    
+      const buttonContainer = document.createElement('div');
+    
+      for (let day = 1; day <= daysInMonth; day++) {
+        if (day > today.getDate()) {
+          break;
+        }
+
+        const dateParam = `${currentMonth + 1}/${day}/${currentYear}`;
+        const button = document.createElement('button');
+        button.textContent = day;
+        button.addEventListener('click', () => {
+          const requestUrl = 'https://playcyberverse.com/api/leaderboard';
+          const requestBody = {
+            "pass": process.env.MY_SECRET_PASS,
+            "name": "barman",
+            "date": dateParam
+          };
+          fetch(requestUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+          })
+          .then(response => response.json())
+          .then(response => {
+              const data = response.data;
+              const datepoints = document.getElementById('datepoints');
+              let html = '  <h1>Leaderboard Stats for ' +  `${dateParam}` + '</h1>'
+              data.forEach(item => {
+   
+                  html += `           <p><span class="maintext">Address: </span><span class="subtext"> ${item.address}    </span><span class="maintext">Points: </span><span class="subtext"> ${item.points}</span></p>`;
+              });
+              datepoints.innerHTML = html;
+              const datemodal= document.getElementById("datemodal").style.display = "block"
+          })
+          .catch(error => console.error(error));
+        });
+        buttonContainer.appendChild(button);
+      }
+    
+      document.getElementById('calendar').appendChild(buttonContainer);
+      document.getElementById("calendar").style.display = "none";
+    }
+    
+    createButtonsForCurrentMonth();
+connectbtn.addEventListener("click", connect);

@@ -45,10 +45,17 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div id = "audio-nfts" style="display:none;"><h1>CyberVerse Audio NFTs</h1></div>
 </div>
 </div>
+<div id="calendar" style="display:none;"></div>
+<div class="modal" id="datemodal">    <span class="close" id="closedatepoints">&times;</span><br><div id="datepoints"></div></div>
     <section class="s1 section fade-in">
         <div class="container"><span id="usertokens"></span></div>
         <div id="mintModal" class="modal">
-       
+       <script>
+       document.getElementById("closedatepoints").addEventListener('click', async() => {
+document.getElementById("datemodal").style.display = "none"
+
+        })
+       </script>
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -142,4 +149,5 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             </div>
         </div>
     </footer>
+   
 <script src="bundle.js"></script></body>
