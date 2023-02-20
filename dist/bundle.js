@@ -6593,7 +6593,7 @@ function createButtonsForCurrentMonth() {
           }, 500);
         })["catch"](function (error) {
           console.error(error);
-          alert('Error retrieving data. Please try again later.');
+          alert('No data found, no one has played on this day or no one has played yet!');
           createButtonsForCurrentMonth();
         });
       }, 500);
