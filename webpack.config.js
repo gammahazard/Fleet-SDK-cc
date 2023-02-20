@@ -1,6 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   mode: 'none',
   entry: './src/index.js',
@@ -27,6 +27,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        exclude: /.env/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -38,6 +39,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/assets', to: 'dist/assets' },
@@ -47,5 +49,5 @@ module.exports = {
          { from: 'src/index.html', to: 'index.html' }
       ],
     }),
-  ],
+],
 };
