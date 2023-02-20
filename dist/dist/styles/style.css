@@ -128,10 +128,10 @@ html {
     scroll-behavior: smooth;
 }
 #monthdisplay {
-    font-size:x-small;
-  
- 
-}
+font-size:larger;
+    color: black;
+    text-shadow: -0.05px -0.25px 0 yellow, 0.25px -0.25px 0 yellow, -0.25px 0.25px 0 yellow, 0.25px 0.25px 0 yellow;
+  }
 body {
     margin: 0;
     padding: 0;
@@ -472,24 +472,29 @@ section h2 {
   }
   .maintext {
     color:var(--yellow)
+    
   }
+  
   #calendar {
     display:flex;
-    position:absolute;
+    position:relative;
     color:yellow;
     background-color:transparent;
-top:75;
-z-index:50;
-bottom:100;
-    width: 113px;
-    height:50px;
+
+   bottom:-10.25rem;
+    left: 42.9%; /* adjust as needed */
+
+    z-index: 50;
+    width: 12.5%;
+    height: 5rem;
   }
+
   #calendar button {
     background-color:black;
     color:var(--pink);
     cursor:pointer;
-    padding:2.5px;
-    margin:0.25px;
+width:auto;
+height:auto;
   }
   #calendar button:hover {
     background-color:black;
@@ -507,6 +512,7 @@ cursor:pointer;
 #datemodal {
     text-align:center;
     background-color:black;
+    z-index:51;
 
 }
 #closedatepoints {
