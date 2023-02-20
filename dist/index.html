@@ -57,8 +57,14 @@ document.getElementById("datemodal").style.display = "none"
         })
        </script>
     <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
+    <div class="modal-content" id="mintmodal">
+      <span class="close" id="closemintmodal">&times;</span>
+      <script>
+           document.getElementById("closemintmodal").addEventListener('click', async() => {
+document.getElementById("mintModal").style.display = "none"
+           })
+
+        </script>
       <h4 id="modaltitle">Wave 3 CyberCitizen NFT Mint</h4>
 
 <button id = "mintbtn" style="display:inline-flex; margin-left:45%;text-align:center; justify-content:center; align-items:center;">MINT</button>

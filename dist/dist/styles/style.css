@@ -503,8 +503,8 @@ height:auto;
   }
 #closedashboard {
     position:absolute;
-    margin-left:12%;
-    margin-top:15%;
+    margin-left:72%;
+    margin-top:8%;
 }
 #dashboardbtn:hover {
 cursor:pointer;
@@ -701,8 +701,8 @@ li p {
     position:absolute;
     background-color:black;
     border:1px solid pink;
-    margin-top:15%;
-    margin-left:15%;
+margin-left:25%;
+margin-top:10%;
 }
 .play-button {
     background-color:Yellow;
