@@ -6583,9 +6583,17 @@ function createButtonsForCurrentMonth() {
           },
           body: JSON.stringify(requestBody)
         }).then(function (response) {
+          if (!response.ok) {
+            throw new Error('Response not ok');
+          }
           return response.json();
         }).then(function (response) {
           var data = response.data;
+          if (data.length === 0) {
+            alert('No one has played on this day yet!');
+            createButtonsForCurrentMonth();
+            return;
+          }
           var datepoints = document.getElementById('datepoints');
           var html = '<h1>Leaderboard Stats for ' + "".concat(dateParam) + '</h1>';
           data.forEach(function (item) {
@@ -6599,7 +6607,9 @@ function createButtonsForCurrentMonth() {
             createButtonsForCurrentMonth();
           }, 500);
         })["catch"](function (error) {
-          return console.error(error);
+          console.error(error);
+          alert('Error retrieving data. Please try again later.');
+          createButtonsForCurrentMonth();
         });
       }, 500);
     });
