@@ -352,7 +352,14 @@ h2 {
     color: var(--pink);
     font-size: 3rem;
 }
-
+.spinner {
+ background-color:transparent;
+    background-repeat: no-repeat;
+    background-size: 40px 40px; /* adjust as necessary */
+    width: 40px; /* adjust as necessary */
+    height: 40px; /* adjust as necessary */
+    margin: 0 auto; /* centers the spinner horizontally */
+  }
 h3 {
     font-size: 2rem;
 }
