@@ -32,7 +32,10 @@
     --step-4: clamp(2.72rem, -5.58rem + 41.52vw, 24.00rem);
     --step-5: clamp(3.27rem, -14.19rem + 87.29vw, 48.00rem);
 }
-
+.cyberbtn {
+    background-color:black;
+    color:yellow;
+}
 *,
 *:before,
 *:after {
@@ -50,11 +53,6 @@ margin-top:-2rem;
 }
 #mintbtn {
     display:block;
-    background-color:black;
-    color:yellow;
- }
- #mintbtn:hover {
-    color:var(--pink)
  }
 .modal {
     display: none; /* Hidden by default */
@@ -127,11 +125,7 @@ html {
     font-family: pixelFont;
     scroll-behavior: smooth;
 }
-#monthdisplay {
-font-size:larger;
-    color: black;
-    text-shadow: -0.05px -0.25px 0 yellow, 0.25px -0.25px 0 yellow, -0.25px 0.25px 0 yellow, 0.25px 0.25px 0 yellow;
-  }
+
 body {
     margin: 0;
     padding: 0;
@@ -143,10 +137,7 @@ body {
 
     background-color: var(--bg);
 }
-#statsdisplay {
-   color:var(--pink);
 
-}
 img#balanceicon, #cypxicon {
     width:2.5rem;
     height:2.5rem;
@@ -177,7 +168,7 @@ header {
     left: 0;
     background-color: var(--bg-header);
     width: 100vw;
-z-index:999;
+
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
 }
@@ -185,9 +176,7 @@ z-index:999;
 span {
     color: var(--pink);
 }
-a#dashboardbtn {
-    font-size:smaller;
-}
+
 .nav-links {
     text-transform: uppercase;
     margin: 0;
@@ -352,14 +341,7 @@ h2 {
     color: var(--pink);
     font-size: 3rem;
 }
-.spinner {
- background-color:transparent;
-    background-repeat: no-repeat;
-    background-size: 40px 40px; /* adjust as necessary */
-    width: 40px; /* adjust as necessary */
-    height: 40px; /* adjust as necessary */
-    margin: 0 auto; /* centers the spinner horizontally */
-  }
+
 h3 {
     font-size: 2rem;
 }
@@ -479,47 +461,37 @@ section h2 {
   }
   .maintext {
     color:var(--yellow)
-    
   }
-  
   #calendar {
     display:flex;
-    position:relative;
+    position:absolute;
     color:yellow;
     background-color:transparent;
-
-   bottom:-10.25rem;
-    left: 42.9%; /* adjust as needed */
-
-    z-index: 50;
-    width: 12.5%;
-    height: 5rem;
+top:50;
+bottom:100;
+    width: 113px;
+    height:50px;
   }
-
   #calendar button {
     background-color:black;
     color:var(--pink);
     cursor:pointer;
-width:auto;
-height:auto;
   }
   #calendar button:hover {
     background-color:black;
     color:var(--yellow);
-
+    border:0.25px solid yellow;
   }
 #closedashboard {
     position:absolute;
-    margin-left:72%;
-    margin-top:8%;
+    margin-left:12%;
+    margin-top:15%;
 }
 #dashboardbtn:hover {
 cursor:pointer;
 }
 #datemodal {
     text-align:center;
-    background-color:black;
-    z-index:51;
 
 }
 #closedatepoints {
@@ -708,8 +680,8 @@ li p {
     position:absolute;
     background-color:black;
     border:1px solid pink;
-margin-left:25%;
-margin-top:10%;
+    margin-top:15%;
+    margin-left:15%;
 }
 .play-button {
     background-color:Yellow;
@@ -860,10 +832,7 @@ button.disabled {
 .wallet-button:hover {
     border: 2px #258ae8 solid;
 }
-#connectbtn {
-    background-color:transparent;
-    color:yellow;
-}
+
 #finish {
     background-color: #258ae8;
     border: 2px #258ae8 solid;
@@ -957,9 +926,6 @@ li #header-image {
         width:100%;
         overflow-x:hidden;
         
-    }
-    #wallet-btn {
-        display:none;
     }
 iframe#iframetrailer {
     width:75%;

@@ -20,12 +20,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <ul class="nav-links">
             <span id = "cypxbalance"></span>
             <span id = userbalance"></span>
-            <li id="wallet-btn"><button id="connectbtn"><i class="fa-solid fa-wallet"></i></button></li>
+            <li id="wallet-btn"><button id="connectbtn" class="cyberbtn"><i class="fa-solid fa-wallet"></i></button></li>
 
            <span id = "userbalance"></span>
            <span id ="cypxbalance"></span>
 
-<li><a id="dashboardbtn" style="display:none;">In-Game items</a></li>
+
                 <li><a href="#mint">Mint</a></li>
                 <li><a href="#roadmap">Map</a></li>    
                 <li><a href="#faq">F.A.Q</a></li>
@@ -42,6 +42,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class = "modal" id="dashboardmodal">
         <span class="close" id="closedashboard">&times;</span>
 <div class="dashboardcont">   <div id="dashboard"></div>
+<div id="calendar"></div>
 <div id = "audio-nfts" style="display:none;"><h1>CyberVerse Audio NFTs</h1></div>
 </div>
 </div>
@@ -57,15 +58,20 @@ document.getElementById("datemodal").style.display = "none"
         })
        </script>
     <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
+    <div class="modal-content" id="mintModal">
+      <span class="close" id="closemint">&times;</span>
       <h4 id="modaltitle">Wave 3 CyberCitizen NFT Mint</h4>
 
-<button id = "mintbtn" style="display:inline-flex; margin-left:45%;text-align:center; justify-content:center; align-items:center;">MINT</button>
+<button class="cyberbtn" id = "mintbtn" style="display:inline-flex; margin-left:45%;text-align:center; justify-content:center; align-items:center;">MINT</button>
       <p id="modal-text">Or scan the QR Code below to continue:</p>
       <img class = "image-modal" src="./dist/assets/qr.png">
   </div>
-  
+  <script>const mintmodal = document.getElementById("mintModal")
+    const closemintmodal = document.getElementById("closemint")
+    closemintmodal.addEventListener('click', () => {
+      mintmodal.style.display = "none" 
+    
+    })</script>
   </div>
   
   <div class="enter-cyberverse">
@@ -77,7 +83,7 @@ document.getElementById("datemodal").style.display = "none"
                   
               </div>
               <div class="flex-container">
-           <div id="dashboard"></div>
+            <a id="dashboardbtn" style="display:none; font-size:x-small;">My CyberCitizens</a>
             
                   <h1>2080 Uniquely generated cybercitizens living on the ergo blockchain</h1>
                   <a id="explore" href="./dist/pages/gen2/explore-gen2.html">EXPLORE</a> 

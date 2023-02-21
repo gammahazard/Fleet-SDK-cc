@@ -6,18 +6,17 @@ async function mint() {
   try {
     const cypxTokenId = "01dce8a5632d19799950ff90bca3b5d0ca3ebfa8aaafd06f0cc6dd1e97150e7f";
     let creationHeight = await ergo.get_current_height();
-    const amountToSend = 2000000000;
+    const amountToSend = 20000000000;
 
     const inputs = await ergo.get_utxos();
   
     const userAddress = await ergo.get_change_address();
-    const cybercitizensWallet = "9g2UMfBWeSSo6cDU6cynCGZSuNf9AFxFWVByWujrzjQC3piEakE";
+    const cybercitizensWallet = "9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf";
 
     unsignedTransaction = new TransactionBuilder(creationHeight)
       .from(inputs)
       .to(
         new OutputBuilder(amountToSend, cybercitizensWallet)
-    
       )
       .sendChangeTo(userAddress)
       .payMinFee()
@@ -28,8 +27,15 @@ async function mint() {
 
     return unsignedTransaction;
   } catch (error) {
-    console.error(`Error minting coins: ${error}`); 
-    alert(`Error minting coins: ${error}`);
+    if (error.message.includes("not defined")) {
+      alert("Please connect your wallet.");
+    } else if (error.message.includes(">")) {
+      const ergValue = error.message.split("nanoErgs:")[1].split(">")[0].trim();
+      const ergs = parseInt(ergValue) / 1000000000;
+      alert(`Insufficient Funds, please add ${ergs} ERG.`);
+    } else {
+      alert(`Error minting coins: ${error}`);
+    }
   }
 }
 
@@ -55,6 +61,7 @@ mintbtn.addEventListener("click", async () => {
     console.error(`Error minting coins: ${error}`);
     alert(`Error minting coins: ${error}`);
   } finally {
+    // Re-enable the mint button
     mintbtn.disabled = false;
     mintbtn.classList.remove("disabled");
     mintbtn.innerText = mintbtnText;
@@ -70,5 +77,4 @@ window.addEventListener("beforeunload", () => {
     mintbtn.innerText = mintbtnText;
   }
 });
-
 

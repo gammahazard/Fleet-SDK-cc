@@ -12,46 +12,53 @@ const connectbtn = document.getElementById("connectbtn")
 
 
 async function connect() {
-  const ConnectUserWallet = await ergoConnector.nautilus.connect();
-  ConnectUserWallet;
-document.getElementById("calendar").style.display = "flex"
+  try {
+    const ConnectUserWallet = await ergoConnector.nautilus.connect();
+    ConnectUserWallet;
+    document.getElementById("calendar").style.display = "flex"
 
-  const UserAddress = await ergo.get_change_address();
-  const cypxAmount = await displayCypxAmount(UserAddress);
-  const mintbtn = document.getElementById("mintbtn");
-  const UserBalance = await ergo.get_balance();
-  const UserBalanceErg = UserBalance / 10**9;
-  const dashboardbtn = document.getElementById("dashboardbtn")
-  dashboardbtn.style.display = "flex"
-  connectbtn.style.display = "none";
-  console.log(UserAddress);
-  console.log(UserBalanceErg);
+    const UserAddress = await ergo.get_change_address();
+    const cypxAmount = await displayCypxAmount(UserAddress);
+    const mintbtn = document.getElementById("mintbtn");
+    const UserBalance = await ergo.get_balance();
+    const UserBalanceErg = UserBalance / 10**9;
+    const dashboardbtn = document.getElementById("dashboardbtn")
+    dashboardbtn.style.display = "flex"
+    connectbtn.style.display = "none";
+    console.log(UserAddress);
+    console.log(UserBalanceErg);
 
-  document.getElementById("userbalance").style.display = "flex";
-  document.getElementById("userbalance").innerHTML = `<img src="./dist/assets/ergicon.png" id="balanceicon">   ` + UserBalanceErg;
-  document.getElementById("cypxbalance").innerHTML = `<img src="./dist/assets/cypxicon.png" id="cypxicon">` + cypxAmount/10**4;
+    document.getElementById("userbalance").style.display = "flex";
+    document.getElementById("userbalance").innerHTML = `<img src="./dist/assets/ergicon.png" id="balanceicon">   ` + UserBalanceErg;
+    document.getElementById("cypxbalance").innerHTML = `<img src="./dist/assets/cypxicon.png" id="cypxicon">` + cypxAmount/10**4;
 
-  const assets = await displayCybercitizenAssets(UserAddress);
+    const assets = await displayCybercitizenAssets(UserAddress);
 
-  let assetsHTML = '';
-
-
-
-
-  const audioNFTs = await displayAudioNFTs(UserAddress);
-  const audioNFTsContainer = document.getElementById("audio-nfts");
-  audioNFTsContainer.style.display = "block";
-  let audioNFTsHTML = '';
-
-  audioNFTs.forEach((audioNFT) => {
-    audioNFTsHTML += `
-      <div>
-        <p class = "assettitle">CyberVerse  Audio NFT:</p><p class="assetdescription"> ${audioNFT.name}</p>
-      </div>
-    `;
-  });
-  audioNFTsContainer.innerHTML = audioNFTsHTML;
+    let assetsHTML = '';
+  } catch (error) {
+    if (error.message.includes("ergoConnector")) {
+      alert('Please download Nautilus wallet : https://chrome.google.com/webstore/detail/nautilus-wallet/gjlmehlldlphhljhpnlddaodbjjcchai');
+    } else {
+      alert(`Error connecting to wallet: ${error}`);
+    }
+  }
 }
+
+  //const audioNFTs = await displayAudioNFTs(UserAddress);
+  //const audioNFTsContainer = document.getElementById("audio-nfts");
+  //audioNFTsContainer.style.display = "block";
+  //let audioNFTsHTML = '';
+
+  //audioNFTs.forEach((audioNFT) => {
+    //audioNFTsHTML += `
+      //<div>
+        //<p class = "assettitle">CyberVerse  Audio NFT:</p><p class="assetdescription"> ${audioNFT.name}</p>
+      //</div>
+    //`;
+  //});
+  //audioNFTsContainer.innerHTML = audioNFTsHTML;
+//}
+
     async function displayCypxAmount(userAddress) {
     const response = await fetch(`https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/${userAddress}`);
     const data = await response.json();
@@ -114,142 +121,142 @@ document.getElementById("calendar").style.display = "flex"
       return cybercitizenAssets;
     }
     
-    async function displayAudioNFTs(userAddress) {
-      const response = await fetch(`https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/${userAddress}`);
-      const data = await response.json();
+    // async function displayAudioNFTs(userAddress) {
+    //   const response = await fetch(`https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/${userAddress}`);
+    //   const data = await response.json();
     
-      const audioNFTs = [];
+    //   const audioNFTs = [];
     
-      data.items.forEach((item) => {
-        item.assets.forEach((asset) => {
-          if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia'].includes(asset.name)) {
-            audioNFTs.push({
-              name: asset.name,
-            });
-          }
-        });
-      });
+    //   data.items.forEach((item) => {
+    //     item.assets.forEach((asset) => {
+    //       if (['Laser Guns', 'Outrun', 'Danger Zone', 'Cyberlykos', 'Blue Lights', 'Into Cyberia'].includes(asset.name)) {
+    //         audioNFTs.push({
+    //           name: asset.name,
+    //         });
+    //       }
+    //     });
+    //   });
     
-      let audioNFTsHTML = '';
-      audioNFTs.forEach((audioNFT) => {
-        audioNFTsHTML += `
-          <div class="assetcont">
-            <p class="assettitle">CyberVerse Track Name:</p>
-            <p class="assetdescription">${audioNFT.name}</p>
-            <button class="play-button" data-asset="${audioNFT.name}">Play</button>
-            <button class="pause-button" data-asset="${audioNFT.name}" style="display:none;">Pause</button>
-            <div class="seek-container">
-              <input class="seek-bar" type="range" min="0" step="1" value="0">
-              <span class="current-time">0:00 </span><span>/</span>
-              <span class="duration">0:00</span>
-            </div>
-          </div>
-        `;
-      });
+    //   let audioNFTsHTML = '';
+    //   audioNFTs.forEach((audioNFT) => {
+    //     audioNFTsHTML += `
+    //       <div class="assetcont">
+    //         <p class="assettitle">CyberVerse Track Name:</p>
+    //         <p class="assetdescription">${audioNFT.name}</p>
+    //         <button class="play-button" data-asset="${audioNFT.name}">Play</button>
+    //         <button class="pause-button" data-asset="${audioNFT.name}" style="display:none;">Pause</button>
+    //         <div class="seek-container">
+    //           <input class="seek-bar" type="range" min="0" step="1" value="0">
+    //           <span class="current-time">0:00 </span><span>/</span>
+    //           <span class="duration">0:00</span>
+    //         </div>
+    //       </div>
+    //     `;
+    //   });
     
-      const audioNFTsElement = document.getElementById("audio-nfts");
-      audioNFTsElement.innerHTML = audioNFTsHTML;
+    //   const audioNFTsElement = document.getElementById("audio-nfts");
+    //   audioNFTsElement.innerHTML = audioNFTsHTML;
     
-      // add event listeners to play buttons
-      const playButtons = document.querySelectorAll('.play-button');
-      playButtons.forEach(button => {
-        const assetName = button.dataset.asset;
-        const audio = new Audio(`./dist/assets/audio-dashboard/${assetName.replace(/ /g, '_')}.wav`);
-        let audioPlayer;
+    //   // add event listeners to play buttons
+    //   const playButtons = document.querySelectorAll('.play-button');
+    //   playButtons.forEach(button => {
+    //     const assetName = button.dataset.asset;
+    //     const audio = new Audio(`./dist/assets/audio-dashboard/${assetName.replace(/ /g, '_')}.wav`);
+    //     let audioPlayer;
     
-        const seekBar = button.parentElement.querySelector('.seek-bar');
-        const currentTime = button.parentElement.querySelector('.current-time');
-        const duration = button.parentElement.querySelector('.duration');
+    //     const seekBar = button.parentElement.querySelector('.seek-bar');
+    //     const currentTime = button.parentElement.querySelector('.current-time');
+    //     const duration = button.parentElement.querySelector('.duration');
     
-        audio.addEventListener('loadedmetadata', () => {
-          duration.textContent = formatTime(audio.duration);
-          seekBar.max = audio.duration;
-        });
+    //     audio.addEventListener('loadedmetadata', () => {
+    //       duration.textContent = formatTime(audio.duration);
+    //       seekBar.max = audio.duration;
+    //     });
     
-        seekBar.addEventListener('input', () => {
-          currentTime.textContent = formatTime(seekBar.value);
-          audio.currentTime = seekBar.value;
-        });
+    //     seekBar.addEventListener('input', () => {
+    //       currentTime.textContent = formatTime(seekBar.value);
+    //       audio.currentTime = seekBar.value;
+    //     });
     
-        button.addEventListener('click', () => {
-          audio.play();
-          audioPlayer = audio;
-          button.style.display = 'none';
-          button.nextElementSibling.style.display = 'inline-block'; // show the pause button
-        });
+    //     button.addEventListener('click', () => {
+    //       audio.play();
+    //       audioPlayer = audio;
+    //       button.style.display = 'none';
+    //       button.nextElementSibling.style.display = 'inline-block'; // show the pause button
+    //     });
     
-        // add event listeners to pause buttons
-        const pauseButtons = document.querySelectorAll('.pause-button');
-        pauseButtons.forEach(pauseButton => {
-          pauseButton.addEventListener('click', () => {
-            audioPlayer.pause();
-            pauseButton.style.display = 'none';
-            pauseButton.previousElementSibling.style.display = 'inline-block'; // show the play button
-          });
-        });
+    //     // add event listeners to pause buttons
+    //     const pauseButtons = document.querySelectorAll('.pause-button');
+    //     pauseButtons.forEach(pauseButton => {
+    //       pauseButton.addEventListener('click', () => {
+    //         audioPlayer.pause();
+    //         pauseButton.style.display = 'none';
+    //         pauseButton.previousElementSibling.style.display = 'inline-block'; // show the play button
+    //       });
+    //     });
     
-        // update seek bar as audio plays
-        audio.addEventListener('timeupdate', () => {
-          seekBar.value = audio.currentTime;
-          currentTime.textContent = formatTime(audio.currentTime);
-        });
+    //     // update seek bar as audio plays
+    //     audio.addEventListener('timeupdate', () => {
+    //       seekBar.value = audio.currentTime;
+    //       currentTime.textContent = formatTime(audio.currentTime);
+    //     });
     
-        // add event listener to window to check if
+    //     // add event listener to window to check if
     
     
     
 
-    window.addEventListener('blur', () => {
-    audioNFTs.forEach(audioNFT => {
-    const audio = new Audio(`./dist/assets/audio-dashboard/${audioNFT.name.replace(/ /g, '_')}.wav`);
-    let isPlaying = false;
-    let duration = 0;
-    let seekBar = null;
+    // window.addEventListener('blur', () => {
+    // audioNFTs.forEach(audioNFT => {
+    // const audio = new Audio(`./dist/assets/audio-dashboard/${audioNFT.name.replace(/ /g, '_')}.wav`);
+    // let isPlaying = false;
+    // let duration = 0;
+    // let seekBar = null;
     
    
-      audio.addEventListener('play', () => {
-        isPlaying = true;
-        duration = audio.duration;
-        seekBar.max = duration;
-      });
+    //   audio.addEventListener('play', () => {
+    //     isPlaying = true;
+    //     duration = audio.duration;
+    //     seekBar.max = duration;
+    //   });
     
-      audio.addEventListener('pause', () => {
-        isPlaying = false;
-      });
+    //   audio.addEventListener('pause', () => {
+    //     isPlaying = false;
+    //   });
     
-      audio.addEventListener('timeupdate', () => {
-        if (isPlaying) {
-          seekBar.value = audio.currentTime;
-        }
-      });
+    //   audio.addEventListener('timeupdate', () => {
+    //     if (isPlaying) {
+    //       seekBar.value = audio.currentTime;
+    //     }
+    //   });
     
-      const playButton = document.querySelector(`.play-button[data-asset="${audioNFT.name}"]`);
-      const pauseButton = document.querySelector(`.pause-button[data-asset="${audioNFT.name}"]`);
-      seekBar = document.querySelector(`.seek-bar[data-asset="${audioNFT.name}"]`);
+    //   const playButton = document.querySelector(`.play-button[data-asset="${audioNFT.name}"]`);
+    //   const pauseButton = document.querySelector(`.pause-button[data-asset="${audioNFT.name}"]`);
+    //   seekBar = document.querySelector(`.seek-bar[data-asset="${audioNFT.name}"]`);
     
-      playButton.addEventListener('click', () => {
-        audio.play();
-        isPlaying = true;
-        playButton.style.display = 'none';
-        pauseButton.style.display = 'inline-block';
-      });
+    //   playButton.addEventListener('click', () => {
+    //     audio.play();
+    //     isPlaying = true;
+    //     playButton.style.display = 'none';
+    //     pauseButton.style.display = 'inline-block';
+    //   });
     
-      pauseButton.addEventListener('click', () => {
-        audio.pause();
-        isPlaying = false;
-        pauseButton.style.display = 'none';
-        playButton.style.display = 'inline-block';
-      });
+    //   pauseButton.addEventListener('click', () => {
+    //     audio.pause();
+    //     isPlaying = false;
+    //     pauseButton.style.display = 'none';
+    //     playButton.style.display = 'inline-block';
+    //   });
     
-      seekBar.addEventListener('input', () => {
-        audio.currentTime = seekBar.value;
-      });
-    });
-    });
-    }
+    //   seekBar.addEventListener('input', () => {
+    //     audio.currentTime = seekBar.value;
+    //   });
+    // });
+    // });
+    // }
     
 
-    )}
+    //)}
     const displaybtn = document.getElementById("dashboardbtn")
     displaybtn.addEventListener ("click", async() => {
     
@@ -261,56 +268,8 @@ document.getElementById("calendar").style.display = "flex"
       dashboardmodal.style.display = "none"
     })
     
-    function createButtonsForCurrentMonth() {
-      const today = new Date();
-      const currentMonth = today.getMonth();
-      const currentYear = today.getFullYear();
-      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    
-      const buttonContainer = document.createElement('div');
-    
-      for (let day = 1; day <= daysInMonth; day++) {
-        if (day > today.getDate()) {
-          break;
-        }
 
-        const dateParam = `${currentMonth + 1}/${day}/${currentYear}`;
-        const button = document.createElement('button');
-        button.textContent = day;
-        button.addEventListener('click', () => {
-          const requestUrl = 'https://playcyberverse.com/api/leaderboard';
-          const requestBody = {
-            "pass": process.env.MY_SECRET_PASS,
-            "name": "barman",
-            "date": dateParam
-          };
-          fetch(requestUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
-          })
-          .then(response => response.json())
-          .then(response => {
-              const data = response.data;
-              const datepoints = document.getElementById('datepoints');
-              let html = '  <h1>Leaderboard Stats for ' +  `${dateParam}` + '</h1>'
-              data.forEach(item => {
-   
-                  html += `           <p><span class="maintext">Address: </span><span class="subtext"> ${item.address}    </span><span class="maintext">Points: </span><span class="subtext"> ${item.points}</span></p>`;
-              });
-              datepoints.innerHTML = html;
-              const datemodal= document.getElementById("datemodal").style.display = "block"
-          })
-          .catch(error => console.error(error));
-        });
-        buttonContainer.appendChild(button);
-      }
-    
-      document.getElementById('calendar').appendChild(buttonContainer);
-      document.getElementById("calendar").style.display = "none";
-    }
-    
-    createButtonsForCurrentMonth();
-connectbtn.addEventListener("click", connect);
+  
+
+
+    connectbtn.addEventListener("click", connect);

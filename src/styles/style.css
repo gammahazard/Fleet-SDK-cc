@@ -32,7 +32,10 @@
     --step-4: clamp(2.72rem, -5.58rem + 41.52vw, 24.00rem);
     --step-5: clamp(3.27rem, -14.19rem + 87.29vw, 48.00rem);
 }
-
+.cyberbtn {
+    background-color:black;
+    color:yellow;
+}
 *,
 *:before,
 *:after {
