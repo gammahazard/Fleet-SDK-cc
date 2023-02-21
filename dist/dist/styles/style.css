@@ -484,8 +484,13 @@ bottom:100;
   }
 #closedashboard {
     position:absolute;
-    margin-left:12%;
+    margin-left:82%;
     margin-top:15%;
+    z-index:999;
+}
+#dashboardmodal {
+    justify-content:center;
+
 }
 #dashboardbtn:hover {
 cursor:pointer;
