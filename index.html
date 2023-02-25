@@ -1,0 +1,155 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="./dist/assets/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>CyberCitizens</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img id="scrollTop" src="./dist/assets/CyberVerseLanding/title-header.png" alt="">
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav>
+      
+            <ul class="nav-links">
+            <span id = "cypxbalance"></span>
+            <span id = userbalance"></span>
+            <li id="wallet-btn"><button id="connectbtn" class="cyberbtn"><i class="fa-solid fa-wallet"></i></button></li>
+
+           <span id = "userbalance"></span>
+           <span id ="cypxbalance"></span>
+
+
+                <li><a href="#mint">Mint</a></li>
+                <li><a href="#roadmap">Map</a></li>    
+                <li><a href="#faq">F.A.Q</a></li>
+                <li><a href="#trailer">Trailer</a></li> 
+                <li><a  target="blank" href="https://docs.cyberversegame.io/whitepaper-v3./">Whitepaper V3</a></li>
+         
+            </ul>
+     
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+    <div class = "modal" id="dashboardmodal">
+        <span class="close" id="closedashboard">&times;</span>
+<div class="dashboardcont">   <div id="dashboard"></div>
+<div id="calendar"></div>
+<div id = "audio-nfts" style="display:none;"><h1>CyberVerse Audio NFTs</h1></div>
+</div>
+</div>
+<div id="calendar" style="display:none;"></div>
+<div class="modal" id="datemodal">    <span class="close" id="closedatepoints">&times;</span><br><div id="datepoints"></div></div>
+    <section class="s1 section fade-in">
+        <div class="container"><span id="usertokens"></span></div>
+        <div id="mintModal" class="modal">
+
+      
+    <!-- Modal content -->
+    <div class="modal-content" id="mintModal">
+      <span class="close" id="closemint">&times;</span>
+      <h4 id="modaltitle">Wave 3 CyberCitizen NFT Mint</h4>
+
+<button class="cyberbtn" id = "mintbtn" style="display:inline-flex; margin-left:45%;text-align:center; justify-content:center; align-items:center;">MINT</button>
+      <p id="modal-text">Or scan the QR Code below to continue:</p>
+      <img class = "image-modal" src="./dist/assets/qr.png">
+  </div>
+  <script>const mintmodal = document.getElementById("mintModal")
+    const closemintmodal = document.getElementById("closemint")
+    closemintmodal.addEventListener('click', () => {
+      mintmodal.style.display = "none" 
+    
+    })</script>
+  </div>
+  
+  <div class="enter-cyberverse">
+      <button class="cyber-button" onclick="window.location.href='./dist/pages/cyberverse.html'">The CyberVerse</button>
+     </div>
+          
+              <div class="enter-estate-container">
+                  <button class="cyber-button-estates"onclick="window.location.href='./dist/pages/cyberia-estates.html'"> Cyberia Estates</button>
+                  
+              </div>
+              <div class="flex-container">
+            <a id="dashboardbtn" style="display:none; font-size:x-small;">My CyberCitizens</a>
+            
+                  <h1>2080 Uniquely generated cybercitizens living on the ergo blockchain</h1>
+                  <a id="explore" href="./dist/pages/gen2/explore-gen2.html">EXPLORE</a> 
+              
+              </div>
+          </section>
+          <section class="s2 section fade-in" id="mint">
+              <div class="flex-container-mint">
+                  <div class="container-mint container-mint-img">
+                      <img id="ergopixel-img" src="./dist/assets/cybercitizens/0.png" alt="example cybercitizen">
+                      <p id="unsold" class="unsold">250 NFT's available to sell in the last wave!</p>
+                      <button id="mint-button" class="disabled">Mint</button>
+                  
+                  </div>
+                  <div class="container-mint">
+                      <h2 class="mint-title">When you buy a cybercitizen, you're not just buying an NFT
+                          . Your cybercitizen gives you membership to an exclusive city.
+                      </h2>
+                      <h3 class="address-title">ADDRESS:</h3>
+                      <p class="address-p2k address">9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf</p>
+  
+                      <h3 class="address-title">Current Auctions:</h3>
+                      <p class="auctions-text">Current CyberCitizen auctions can be viewed
+                          <span><a id="auction-link" href="https://www.skyharbor.io/collection/cybercitizens" class="faq-links">here</a></span>
+                      </p>
+                  </div>
+              </div>
+          </section>
+          <section class="s3 section fade-in" id="roadmap">
+            <h2>CYBERIA MAP</h2>
+            <div class="flex-container-roadmap">
+                <img id="cybercity-map" src="./dist/assets/newMap.png" alt="Map of the cybercity">
+            </div>
+        </section>
+        <section class="s5 section fade-in" id="faq" style="gap:0rem!important;">
+            <h2>FAQ</h2>
+            <div id="faqcont">
+            <h5 class="benefit-title">Who are CyberCitizens?</h5>
+            <p class="benefit">CyberCitizens are playable characters living in the CyberVerse with multiple utilities. Find more in our <a style="border:none;" href="https://docs.cyberversegame.io/cyberverse-whitepaper">whitepaper</a>   </li>
+          <h5 class="benefit-title">What is the mint price?</h5>
+          <p class="benefit">20 ERG</p>
+           <h5 class="benefit-title"> How to mint?</h5>
+           <p class="benefit">1. Connect your <a style="border:none;"href="https://chrome.google.com/webstore/detail/nautilus-wallet/gjlmehlldlphhljhpnlddaodbjjcchai">Nautilus Wallet</a>  </p>
+           <p class="benefit"> 2. Set the amount of CyberCitizens you want to buy (max 1 NFT per transaction).</p>
+           <p class="benefit"> 3. Check the Nautilus request for the correct ERG values and sign.</p>
+           <h5 class="benefit-title"> What rewards can I get?</h5> 
+           <p class="benefit" style="text-align:center;"> 
+           EGIO TOKENS - First 100 Minters(2000 EGIOx100) <br> AUDIO NFTS (100%) <br>  CYBER EGGS(30%) <br> SERUMS(10%) <br> BODY PARTS(1.2%) <br>REAL ESTATE(0.9%)  
+           </p></div>
+        </section>
+        <section class="s6 section fade-in" id="trailer">
+            <h2>Trailer</h2>
+            <iframe width="560" height="295" src="https://www.youtube.com/embed/gDOVG6rlNZI" id="iframetrailer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img class="logo" src="./dist/assets/CyberVerseLanding/title-header.png" alt="ergopixels logo">
+            </div>
+            <div class="svg-container">
+                <a  target="blank" href="https://twitter.com/ErgoPixels"><img class="twitter" src="./dist/assets/logo-twitter.svg"
+                        alt="twitter logo"></a>
+                <a target="blank" href="https://discord.com/invite/7FcEFKcKJ7"><img class="discord" src="./dist/assets/logo-discord.svg"
+                        alt="discord logo"></a>
+            </div>
+            <div class="footer-text">
+                CyberCitizens is an NFT project by the ERGOPixels team.
+            </div>
+        </div>
+    </footer>
+   
+<script src="bundle.js"></script></body>

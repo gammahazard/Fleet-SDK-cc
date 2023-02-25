@@ -462,6 +462,10 @@ section h2 {
   .maintext {
     color:var(--yellow)
   }
+  #closemint:hover {
+    color:yellow;
+    cursor:pointer;
+  }
   #calendar {
     display:flex;
     position:absolute;
@@ -471,6 +475,35 @@ top:50;
 bottom:100;
     width: 113px;
     height:50px;
+  }
+  #maintext {
+    color:var(--pink);
+    font-size:small;
+  }
+
+  #subtext{
+    color:var(--yellow);
+    font-size:smaller;
+  }
+  .cont5 {
+    border:1px solid var(--pink)
+  }
+  #calendarheader {
+    position:absolute;
+    bottom:30;
+  left:185;
+    font-size:smaller;
+    margin-bottom:2.5rem;
+  }
+  #datamodal {
+    text-align:center;
+ 
+  }
+  #pointstext, #addresstext {
+    color:var(--pink)
+  }
+  #pointssubtext, #addresssubtext {
+    color : var (--yellow)
   }
   #calendar button {
     background-color:black;
@@ -484,8 +517,9 @@ bottom:100;
   }
 #closedashboard {
     position:absolute;
-    margin-left:82%;
-    margin-top:15%;
+ display:flex;
+ float:left;
+  
     z-index:999;
 }
 #dashboardmodal {
@@ -680,14 +714,7 @@ li p {
 .assetcont {
     border:1px solid var(--purple)
 }
-.dashboardcont {
-    display:block;
-    position:absolute;
-    background-color:black;
-    border:1px solid pink;
-    margin-top:15%;
-    margin-left:15%;
-}
+
 .play-button {
     background-color:Yellow;
 }
@@ -696,7 +723,42 @@ li p {
     justify-content:center;
     align-items:center;
     text-align:Center;
+    background-color:black;
 }
+#copyme:hover {
+    color:yellow;
+}
+#address {
+    margin-inline:auto;
+    text-align:center;
+}
+.mint-modal-message {
+    position: absolute;
+    left: 50%;
+    top:15%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background-color: #ffffff;
+    color: var(--pink);
+    border: 1px solid #3f3f3f;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
 .assettitle {
     font-size:larger;
     color:yellow;
@@ -708,12 +770,15 @@ li p {
     max-width: 90%;
     margin: 0 auto;
 }
-button.disabled {
+a.disabled {
     background-color: red;
     cursor: not-allowed;
   }
   #mintbtn[disabled] {
     background-color: red;
+  }
+  #mintbtn:hover {
+    cursor:pointer;
   }
 .svg-container {
     display: flex;

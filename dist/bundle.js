@@ -365,7 +365,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Main Styling */\n\n@font-face {\n    font-family: pixelFont;\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format(\"opentype\");\n    font-display:swap;\n}\n\n:root {\n    --yellow: #F7FC19;\n    --pink: #EE2DFF;\n    --blue: #0B0029;\n    --bg: var(--blue);\n\n    --red: #FF0000;\n    --purple: #811CB0;\n    --teal: #2fa388;\n    --blue-purple: #2f4aa3;\n    --light-red: #a32f4a;\n    --dark-yellow: #a3882f;\n    --black: #000000;\n    --white: #FFFFFF;\n    --grey: #92a5ce;\n    --bg-header: rgba(0, 0, 0, 0.9);\n    --nav-hover: var(--pink);\n\n    --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.50rem);\n    --step-1: clamp(1.58rem, 1.02rem + 2.78vw, 3.00rem);\n    --step-2: clamp(1.89rem, 0.29rem + 8.02vw, 6.00rem);\n    --step-3: clamp(2.27rem, -1.53rem + 18.99vw, 12.00rem);\n    --step-4: clamp(2.72rem, -5.58rem + 41.52vw, 24.00rem);\n    --step-5: clamp(3.27rem, -14.19rem + 87.29vw, 48.00rem);\n}\n.cyberbtn {\n    background-color:black;\n    color:yellow;\n}\n*,\n*:before,\n*:after {\n    box-sizing: border-box;\n}\niframe#iframetrailer {\n    display:flex;\nmargin-bottom:2.5rem;\nmargin-top:-2rem;\n\n\n}\n#faqcont {\n    text-align:center;\n}\n#mintbtn {\n    display:block;\n }\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    z-index: 1; /* Sit on top */\n    padding-top: 100px; /* Location of the box */\n   \n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n  }\n  \n\n  .close:hover,\n  .close:focus {\n    color: yellow;\n    text-decoration: none;\n    cursor: pointer;\n  }\n#yellow {\n    color:yellow;\n}\n  .modal-content {\n      background-color:black;\n      margin: auto;\n      padding: 20px;\n      border: 1px solid #888;\n      width: 50%;\n      margin-top:7%;\n      font-family:Arial, Helvetica, sans-serif;\n      height:auto;\n      animation-name: animatetop;\n      animation-duration: 0.4s\n    }\n\n    @keyframes animatetop {\n        from {top: -300px; opacity: 0}\n        to {top: 0; opacity: 1}\n      }\n\n\ninput:focus,\nselect:focus,\ntextarea:focus,\nbutton:focus {\n    outline: none;\n}\n\na {\n    text-decoration: none;\n    color: var(--yellow);\n    text-transform: uppercase;\n    border: 2px solid var(--pink);\n    border-radius: 12px;\n    padding: 6px;\n    max-width: 10rem;\n    margin: 0 auto;\n}\n\na:hover {\n    color: var(--pink);\n}\n\nhtml {\n    margin: 0;\n    padding: 0;\n    color: var(--white);\n    font-family: pixelFont;\n    scroll-behavior: smooth;\n}\n\nbody {\n    margin: 0;\n    padding: 0;\n\n    border: 0;\n\n    overflow-x:hidden;\n    \n\n    background-color: var(--bg);\n}\n\nimg#balanceicon, #cypxicon {\n    width:2.5rem;\n    height:2.5rem;\n    display:flex;\n  \n\n\n}\n#usertokens {\n    font-family:Arial, Helvetica, sans-serif;\n}\nspan#userbalance{\nvertical-align:center;\ndisplay:flex;\nfont-size:75%;\n\n}\nspan#cypxbalance{\n\n    display:flex;\n    font-size:75%;\n    \n    }\n    \nheader {\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--bg-header);\n    width: 100vw;\n\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n}\n\nspan {\n    color: var(--pink);\n}\n\n.nav-links {\n    text-transform: uppercase;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    font-size: 1.25rem;\n\n    display: flex;\n    align-items: center;\n}\n\n.nav-toggle {\n    display: none;\n}\nimg#ScrollTop {\nwidth:120%;\nheight:auto;\n}\n\n.nav-toggle-label {\n    display: none;\n    cursor: pointer;\n}\n\n.logo {\n  \n    cursor: initial;\n    padding: 1em;\n}\n\n.logo img {\n  width:120%;\n    cursor: pointer;\n}\n\nnav {\n    grid-column: 2 / 5;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    padding-right: 2em;\n    gap: 2em;\n    z-index:99;\n}\n\nnav ul {\n    display: flex;\n    justify-content: flex-end;\n    min-width: 100%;\n}\n\nnav a {\n    margin-left: 1em;\n    margin-bottom: 0;\n    position: relative;\n}\n\nnav a:hover {\n    color: var(--nav-hover);\n}\n\nnav a::before {\n    content: '';\n    display: block;\n    height: 5px;\n    background: var(--nav-hover);\n    position: absolute;\n    top: -1em;\n    left: 0;\n    right: 0;\n\n    transform: scale(0, 1);\n    transition: transform ease-in-out 250ms;\n}\n\nnav a:hover::before {\n    transform: scale(1, 1);\n}\n\n#discord-desktop,\n#twitter-desktop {\n    margin-right: 10px;\n    border: none;\n}\n\n#discord-desktop {\n    filter: invert(65%) sepia(79%) saturate(2780%) hue-rotate(199deg) brightness(90%) contrast(88%);\n}\n\n#twitter-desktop {\n    filter: invert(68%) sepia(75%) saturate(2575%) hue-rotate(179deg) brightness(99%) contrast(88%);\n}\n\n#discord-desktop::before,\n#twitter-desktop::before {\n    display: none;\n}\n\n.fade-in {\n    opacity: 0;\n    transition: 250ms ease-in;\n}\n\n.fade-in.appear {\n    opacity: 1;\n}\n\nh1 {\n    line-height: 1;\n    font-size: 2rem;\n    padding: 2rem;\n    color: var(--yellow);\n}\n\n.mint-title {\n    font-size: 1.5rem;\n}\n#mint-button {\n    background-color:transparent;\n    border:1px solid var(--pink);\n    color:yellow;\nfont-family:pixelFont;\ndisplay:flex;\nmargin-inline:auto;\nfont-size:2rem;\n}\n#mint-button:hover {\n    background-color:transparent;\n    border:1px solid var(--purple);\n    color:yellow;\nfont-family:pixelFont;\ndisplay:flex;\nmargin-inline:auto;\nfont-size:2rem;\ncursor:pointer;\n}\n.address-title {\n    font-size: 1.5rem;\n}\n\n.address-p2k {\n    font-size: 1rem;\n    max-width: 90%;\n    word-wrap: break-word;\n    cursor: pointer;\n    color:yellow;\n}\n\n.address-p2k:hover {\n    color: var(--purple);\n}\n\n.auctions-text {\n    font-size: 1rem;\n    max-width: 90%;\n    word-wrap: break-word;\n}\n\nh2 {\n    text-align: center;\n    text-transform: uppercase;\n    color: var(--pink);\n    font-size: 3rem;\n}\n\nh3 {\n    font-size: 2rem;\n}\n\nh4 {\n    font-size: 1.5rem;\n}\n#modaltitle {\n    color:var(--yellow);\n    text-align:center;\n}\n#modaladdy {\n    display:block;\n text-align:center;\n    width:100%;\n  \n}\n.image-modal {\n    text-align:center;\n    display:flex;\n    margin-inline:auto;\n    width:25%;\n    height:auto;\n}\n#modal-text{\n    display:block;\n text-align:center;\n    width:100%;\n  \n}\n#copyremind {\n    font-size:0.6rem;\n    text-align:center;\n   margin-top:-20px;\n}\np {}\n\n#mint,\n#explore,\n.unsold {\n    font-size: 1.5rem;\n}\n\nsection {\n    min-height: 50vh;\n    display: flex;\n    flex-direction: column;\n    gap: 3rem;\n    align-items: center;\n\n    /* border-glow-here */\n    background: hsla(295, 100%, 59%, 1);\n\n    background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=\"#EE2DFF\", endColorstr=\"#0B0029\", GradientType=1);\n}\n\nsection h2 {\n    padding-top: 3rem;\n}\n\n.flex-container,\n.flex-container-faq,\n.flex-container-mint,\n.flex-container-roadmap,\n.flex-container-team {\n    padding-bottom: 3rem;\n}\n\n.s1 {\n    min-height: 100vh;\n    flex-direction: column;\n    justify-content: center;\n    background-color: var(--black);\n\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n    background-position: center;\n    background-size: cover;\n    background-repeat: no-repeat;\n}\n\n.logo {\n    height:auto;\n    width:35%;\n}\n.flex-container {\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    text-transform: capitalize;\n    padding-bottom: 4em;\n}\n\n.flex-container-mint {\n    display: flex;\n    max-width: 90%;\n    margin: 6em auto;\n}\n\n.container-mint {\n    display: flex;\n    flex-direction: column;\n    max-width: 40%;\n    margin: 0 auto;\n}\n.close {\n    color: #aaaaaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n\n  }\n  .maintext {\n    color:var(--yellow)\n  }\n  #calendar {\n    display:flex;\n    position:absolute;\n    color:yellow;\n    background-color:transparent;\ntop:50;\nbottom:100;\n    width: 113px;\n    height:50px;\n  }\n  #calendar button {\n    background-color:black;\n    color:var(--pink);\n    cursor:pointer;\n  }\n  #calendar button:hover {\n    background-color:black;\n    color:var(--yellow);\n    border:0.25px solid yellow;\n  }\n#closedashboard {\n    position:absolute;\n    margin-left:82%;\n    margin-top:15%;\n    z-index:999;\n}\n#dashboardmodal {\n    justify-content:center;\n\n}\n#dashboardbtn:hover {\ncursor:pointer;\n}\n#datemodal {\n    text-align:center;\n\n}\n#closedatepoints {\n    margin-right:85%;\n    margin-bottom:2rem;\n}\n.container-mint h3 {\n    color: var(--yellow);\n    margin-bottom: 0;\n}\n\n.container-mint p {\n    margin-top: 0.5em;\n}\n\n.container-mint h2 {\n    text-align: left;\n}\n\n.container-mint-img {\n    gap: 1em;\n    justify-content: center;\n}\n\n.container-mint-img a {\n    text-align: center;\n}\n\n.container-mint img {\n    width: auto;\n    height: auto;\n    max-width: 50%;\n    margin: 0 auto;\n    border-radius: 12px;\n}\n\n.unsold {\n    text-align: center;\n    color: var(--yellow);\n}\n\n.flex-container-roadmap {\n    max-width: 90%;\n    margin: 0 auto;\n    display: flex;\n    gap: 3em;\n}\n\n.container-r1,\n.container-r2 {\n    flex-basis: 50%;\n}\n\n.container-r1 h3,\n.container-r2 h3 {}\n\n.roadmap-title {\n    color: var(--pink);\n    font-size: 3rem;\n}\n\nul {\n    padding: 0;\n}\n\n.container-r1 li,\n.container-r2 li {\n    list-style-type: none;\n}\n\nli h4 {\n    text-transform: uppercase;\n    color: var(--yellow);\n    font-size: 1.5rem;\n}\n\nli p {\n    font-size: 1.25rem;\n    font-family: 'Montserrat', sans-serif;\n}\n\n#cybercity-map {\n    max-width: 80vw;\n    margin: 0 auto;\n    border: 2px solid var(--pink);\n    border-radius: 12px;\n}\n\n.flex-container-team>* {\n    flex-basis: 20%;\n}\n\n.flex-container-team {\n    display: flex;\n    max-width: 90%;\n    margin: 0 auto;\n    flex-direction: row;\n    /* flex-wrap: nowrap; */\n}\n\n.team-column {\n    max-width: 20%;\n    text-align: center;\n}\n\n.team-member-name {\n    text-transform: uppercase;\n    color: var(--yellow);\n    margin-bottom: 2%;\n}\n\n.team-member-description {\n    text-transform: uppercase;\n    font-size: 1.5rem;\n    word-wrap: break-word;\n\n}\n\n.team-member-image {\n    max-width: 60%;\n    border-radius: 12px;\n}\n\n.flex-container-faq {\n    display: flex;\n    flex-direction: column;\n    max-width: 90%;\n    gap: 0;\n}\n\n.faq-header,\n.faq-answer {\n    text-align: center;\n    margin: 0 auto;\n    max-width: 60%;\n}\n\n.faq-header {\n    text-transform: uppercase;\n    color: var(--yellow);\n    margin-bottom: 0.25rem;\n    font-size: 1.5rem;\n}\n\n.faq-answer {\n    margin-bottom: 1em;\n    font-size: 1.25rem;\n    font-family: 'Montserrat', sans-serif;\n}\n\n.faq-links {\n    border: none;\n}\n\n#ergopixel-img {\n    border: 3px solid var(--pink);\n}\n\n.footer-container {\n    display: flex;\n    flex-direction: column;\n}\n\n.footer-container a {\n    border: none;\n}\n\n.footer-logo {\n    width: 10%;\n    margin-top: 1em;\n    padding-bottom: 1em;\n}\n.ccimage {\n    width:100px;\n    height:100px;\n}\n.assetdescription {\n    font-size:larger;\n    color:var(--pink)\n}\n.assetcont {\n    border:1px solid var(--purple)\n}\n.dashboardcont {\n    display:block;\n    position:absolute;\n    background-color:black;\n    border:1px solid pink;\n    margin-top:15%;\n    margin-left:15%;\n}\n.play-button {\n    background-color:Yellow;\n}\n#dashboard, #audio-nfts {\n    display:block;\n    justify-content:center;\n    align-items:center;\n    text-align:Center;\n}\n.assettitle {\n    font-size:larger;\n    color:yellow;\n}\n.footer-logo-container {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--pink);\n    max-width: 90%;\n    margin: 0 auto;\n}\nbutton.disabled {\n    background-color: red;\n    cursor: not-allowed;\n  }\n  #mintbtn[disabled] {\n    background-color: red;\n  }\n.svg-container {\n    display: flex;\n    justify-content: space-around;\n}\n\n.svg-container a {\n    width: 50%;\n    text-align: center;\n}\n\n.discord,\n.twitter {\n    max-width: 50%;\n}\n\n.footer-text {\n    margin-bottom: 1em;\n    text-align: center;\n}\n\n.svg-container {\n    justify-content: center;\n    margin: auto auto;\n    min-width: 50%;\n}\n\n.svg-container a {\n    margin: 0;\n    gap: 0;\n}\n\n.svg-container a img {\n    padding-top: 1em;\n    width: 40%;\n}\n\n.footer-logo {\n    width: 10%;\n}\n\n.footer-text {\n    padding: 1em;\n}\n\n.twitter,\n.discord {\n    filter: invert(98%) sepia(95%) saturate(6%) hue-rotate(306deg) brightness(103%) contrast(100%);\n}\n\n#wallet {\n    cursor: pointer;\n}\n\n#wallet-connector {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    min-width: 50%;\n    min-height: 30%;\n    padding: 1em;\n    background-color: black;\n    border-radius: 20px;\n    color: var(--yellow);\n    text-shadow: 1px 1px #258ae8;\n    display: none;\n    z-index: 200;\n}\n\n#wallet-connector p {\n    padding-bottom: 2%;\n    font-size: 1.5rem;\n}\n\n#wallet-connector input {\n    width: 100%;\n    margin: 0 auto;\n    font-size: 1.25rem;\n}\n\n#wallet-connector.open {\n    z-index: 100;\n    background-color: var(--blue);\n    border: 2px var(--pink) solid;\n    display: block;\n}\n\n#wallet-address-text {\n    font-weight: 100;\n}\n\n#wallet-output {\n    padding-top: 2%;\n    color: red;\n}\n\n#wallet-buttons {\n    display: flex;\n    justify-content: end;\n    gap: 1em;\n    width: 100%;\n    margin: 0 auto;\n}\n\n.wallet-button {\n    all: unset;\n    min-width: 10%;\n    background-color: var(--pink);\n    border: 1px var(--pink) solid;\n    text-align: center;\n    font-size: 1.5rem;\n    border-radius: 10px;\n    cursor: pointer;\n    transition: ease-in 0.2s;\n    padding: 1%;\n    color: var(--yellow);\n    text-shadow: 1px 1px #258ae8;\n}\n\n.wallet-button:hover {\n    border: 2px #258ae8 solid;\n}\n\n#finish {\n    background-color: #258ae8;\n    border: 2px #258ae8 solid;\n}\n\n#finish:hover {\n    border: 2px var(--pink) solid;\n}\n\ninput[type=text],\ntextarea {\n    border: 2px #f711f7 solid;\n    background-color: var(--bblue);\n    border-radius: 20px;\n    color: var(--yellow);\n    font-family: pixelFont;\n}\n\ninput[type=text]:focus,\ntextarea:focus,\ninput[type=text]:hover,\ntextarea:hover {\n    border: 2px var(--pink) solid;\n}\n\n#dino-mobile,\n#twitter-mobile,\n#discord-mobile {\n    display: none;\n}\n\nli #dino-image {\n    flex-grow: 0;\n    flex-basis: 10%;\n}\n\n#dino-image {\n    width: auto;\n    height: auto;\n    max-width: 25px;\n    max-height: 20px;\n}\n\nli #header-image {\n    flex-grow: 1;\n    flex-basis: 10%;\n}\n\n#header-image {\n    width: auto;\n    height: auto;\n    max-width: 30px;\n    max-height: 25px;\n    border-color: red;;\n}\n\n.benefits-list {\n    padding-left: 4%;\n}\n\n.benefit-title {\n    font-size: 1.9rem;\n    color: var(--pink);\n}\n\n.benefit {\n    font-size: 1.25rem;\n    color:var(--yellow)\n}\n\n.container-r1,\n.container-r2 {\n    margin: 0 auto;\n}\n\n#roadmap-switch {\n    margin-bottom: 4em;\n    cursor: pointer;\n    font-size: 1.5rem;\n    max-width: none;\n}\n\n@media all and (max-width : 60em) {\n    header {\n        display: block;\n        text-align: center;\n        z-index: 999;\n        min-width: 10vh;\n    }\n    body{\n        width:100%;\n        overflow-x:hidden;\n        \n    }\niframe#iframetrailer {\n    width:75%;\n    height:auto;\n}\n    .logo {\n        padding-top: 0.5em;\n        padding-bottom: 0.5em;\n        font-size: 2rem;\n       margin-inline:auto;\n    }\n\n    #cybercity-map {\n        max-width: 90%;\n        margin: 0 auto;\n    }\n\n    /* Look for any nav as a preceding sibling */\n    .nav-toggle:checked~nav {\n        transform: scale(1, 1);\n    }\n\n    .nav-toggle:checked~nav .nav-links li a {\n        opacity: 1;\n        transition: opacity 250ms ease-in-out 350ms;\n    }\n\n    .nav-toggle-label {\n        position: absolute;\n        top: 0;\n        left: 0;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        margin-left: 1em;\n    }\n\n    /* Create hamburger */\n    .nav-toggle-label>span,\n    .nav-toggle-label>span::before,\n    .nav-toggle-label>span::after {\n        display: block;\n        background: var(--pink);\n        height: 2px;\n        width: 2em;\n        border-radius: 2px;\n        position: relative;\n    }\n\n    /* Make sure the pseudo-elements have content so they display */\n    .nav-toggle-label>span::before,\n    .nav-toggle-label>span::after {\n        content: '';\n        position: absolute;\n    }\n\n    /* Move the before pseudo-element down */\n    .nav-toggle-label>span::before {\n        bottom: 7px;\n    }\n\n    /* Move the after pseudo-element up */\n    .nav-toggle-label>span::after {\n        top: 7px;\n    }\n\n    nav {\n        position: absolute;\n        text-align: left;\n        top: 100%;\n        left: 0;\n        background-color: var(--bg-header);\n\n        transform: scale(1, 0);\n        transform-origin: top;\n        transition: transform 400ms ease-in-out;\n    }\n\n    nav ul {\n        display: block;\n    }\n\n    nav a {\n        margin-left: 0;\n        border: none;\n    }\n\n    nav a::before {\n        display: none;\n    }\n\n    .nav-links {\n        padding-top: 1em;\n        width: 100vw;\n        border-bottom: 2px solid var(--pink);\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    .nav-links>li {\n        margin-bottom: 1em;\n        margin-left: 1em;\n    }\n\n    .nav-links>li>a {\n        opacity: 0;\n        transition: opacity 100ms ease-in-out;\n    }\n\n    .nav-links>li>a:hover {\n        color: var(--nav-hover);\n    }\n\n\n    .flex-container,\n    .flex-container-faq,\n    .flex-container-mint,\n    .flex-container-roadmap,\n    .flex-container-team {\n        flex-direction: column;\n    }\n\n    .flex-container-mint>* {\n        margin: 0 auto;\n        min-width: 90%;\n    }\n\n    .container-mint h2 {\n        text-align: center;\n    }\n\n    .flex-container-mint {\n        margin: 3rem 0;\n        padding: 0;\n        width: 90%;\n    }\n\n    .flex-container-mint h2 {\n        min-width: 90%;\n    }\n\n    .container-mint img {\n        max-width: 75%;\n    }\n\n\n    .container-mint img {\n        width: auto;\n        height: auto;\n        max-width: 80%;\n        margin: 0 auto;\n    }\n\n    .faq-header,\n    .faq-answer {\n        text-align: center;\n        margin: 1em auto;\n        max-width: 90%;\n    }\n\n    .flex-container-team {\n        flex-direction: column;\n    }\n\n    .flex-container-team>* {\n        flex-basis: 100%;\n    }\n\n    .flex-container-team {\n        justify-content: center;\n        align-items: center;\n    }\n\n    .team-member-image {\n        margin-top: 3rem;\n        max-width: 60%;\n    }\n\n    .team-column {\n        min-width: 90%;\n    }\n\n    .footer-logo {\n        width: 40%;\n    }\n\n    #wallet-connector {\n        width: 90% !important;\n    }\n\n    #wallet-connector p {\n        padding-bottom: 2%;\n        font-size: 1.25rem;\n    }\n\n    #wallet-connector input {\n        width: 100%;\n        margin: 0 auto;\n        font-size: 1.125rem;\n    }\n\n    .wallet-button {\n        font-size: 1.125rem;\n    }\n\n    #dino-desktop,\n    #discord-desktop,\n    #twitter-desktop {\n        display: none;\n    }\n\n    #dino-mobile,\n    #twitter-mobile,\n    #discord-mobile {\n        display: inline-block;\n        padding-bottom: 0;\n        padding-top: 0;\n    }\n\n    .desktop-li {\n        display: none;\n    }\n}\n\n@media all and (max-width : 40em) {\n    #nft-container {\n        flex-direction: column;\n    }\n\n    .auction-card-modal h2 {\n        font-size: 1rem;\n    }\n\n    .nav-links {\n        font-size: 1rem;\n    }\n\n    .roadmap-title {\n        font-size: 2rem;\n    }\n\n    h1 {\n        font-size: 1rem;\n    }\n\n    h2 {\n        font-size: 1.5rem;\n    }\n\n    h3 {\n        font-size: 1rem;\n    }\n\n    .flex-container-faq {\n        max-width: 90%;\n    }\n\n    li h4 {\n        font-size: 1.5rem;\n    }\n\n    .benefits-list {\n        padding-left: 4%;\n    }\n\n    .benefit-title {\n        font-size: 1.3rem;\n    }\n\n    .benefit {\n        font-size: 1.125rem;\n    }\n\n    li p {\n        font-size: 1.25rem;\n    }\n\n    .team-member-name {\n        font-size: 1.5rem;\n    }\n\n    .team-member-description {\n        font-size: 1.25rem;\n    }\n\n    .faq-header {\n        font-size: 1.5rem;\n    }\n\n    .faq-answer {\n        word-wrap: break-word;\n        font-size: 1.25rem;\n    }\n\n    .footer-logo {\n        width: 40%;\n    }\n\n    .footer-text {\n        font-size: 1rem;\n    }\n\n    #wallet-connector {\n        width: 90% !important;\n        top: 60%;\n    }\n\n    #wallet-connector p {\n        padding-bottom: 2%;\n        font-size: 1rem;\n    }\n\n    #wallet-connector input {\n        width: 100%;\n        margin: 0 auto;\n        font-size: 1rem;\n    }\n\n    .wallet-button {\n        font-size: 1rem;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Main Styling */\n\n@font-face {\n    font-family: pixelFont;\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format(\"opentype\");\n    font-display:swap;\n}\n\n:root {\n    --yellow: #F7FC19;\n    --pink: #EE2DFF;\n    --blue: #0B0029;\n    --bg: var(--blue);\n\n    --red: #FF0000;\n    --purple: #811CB0;\n    --teal: #2fa388;\n    --blue-purple: #2f4aa3;\n    --light-red: #a32f4a;\n    --dark-yellow: #a3882f;\n    --black: #000000;\n    --white: #FFFFFF;\n    --grey: #92a5ce;\n    --bg-header: rgba(0, 0, 0, 0.9);\n    --nav-hover: var(--pink);\n\n    --step-0: clamp(1.31rem, 1.24rem + 0.37vw, 1.50rem);\n    --step-1: clamp(1.58rem, 1.02rem + 2.78vw, 3.00rem);\n    --step-2: clamp(1.89rem, 0.29rem + 8.02vw, 6.00rem);\n    --step-3: clamp(2.27rem, -1.53rem + 18.99vw, 12.00rem);\n    --step-4: clamp(2.72rem, -5.58rem + 41.52vw, 24.00rem);\n    --step-5: clamp(3.27rem, -14.19rem + 87.29vw, 48.00rem);\n}\n.cyberbtn {\n    background-color:black;\n    color:yellow;\n}\n*,\n*:before,\n*:after {\n    box-sizing: border-box;\n}\niframe#iframetrailer {\n    display:flex;\nmargin-bottom:2.5rem;\nmargin-top:-2rem;\n\n\n}\n#faqcont {\n    text-align:center;\n}\n#mintbtn {\n    display:block;\n }\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    z-index: 1; /* Sit on top */\n    padding-top: 100px; /* Location of the box */\n   \n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n  }\n  \n\n  .close:hover,\n  .close:focus {\n    color: yellow;\n    text-decoration: none;\n    cursor: pointer;\n  }\n#yellow {\n    color:yellow;\n}\n  .modal-content {\n      background-color:black;\n      margin: auto;\n      padding: 20px;\n      border: 1px solid #888;\n      width: 50%;\n      margin-top:7%;\n      font-family:Arial, Helvetica, sans-serif;\n      height:auto;\n      animation-name: animatetop;\n      animation-duration: 0.4s\n    }\n\n    @keyframes animatetop {\n        from {top: -300px; opacity: 0}\n        to {top: 0; opacity: 1}\n      }\n\n\ninput:focus,\nselect:focus,\ntextarea:focus,\nbutton:focus {\n    outline: none;\n}\n\na {\n    text-decoration: none;\n    color: var(--yellow);\n    text-transform: uppercase;\n    border: 2px solid var(--pink);\n    border-radius: 12px;\n    padding: 6px;\n    max-width: 10rem;\n    margin: 0 auto;\n}\n\na:hover {\n    color: var(--pink);\n}\n\nhtml {\n    margin: 0;\n    padding: 0;\n    color: var(--white);\n    font-family: pixelFont;\n    scroll-behavior: smooth;\n}\n\nbody {\n    margin: 0;\n    padding: 0;\n\n    border: 0;\n\n    overflow-x:hidden;\n    \n\n    background-color: var(--bg);\n}\n\nimg#balanceicon, #cypxicon {\n    width:2.5rem;\n    height:2.5rem;\n    display:flex;\n  \n\n\n}\n#usertokens {\n    font-family:Arial, Helvetica, sans-serif;\n}\nspan#userbalance{\nvertical-align:center;\ndisplay:flex;\nfont-size:75%;\n\n}\nspan#cypxbalance{\n\n    display:flex;\n    font-size:75%;\n    \n    }\n    \nheader {\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--bg-header);\n    width: 100vw;\n\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n}\n\nspan {\n    color: var(--pink);\n}\n\n.nav-links {\n    text-transform: uppercase;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    font-size: 1.25rem;\n\n    display: flex;\n    align-items: center;\n}\n\n.nav-toggle {\n    display: none;\n}\nimg#ScrollTop {\nwidth:120%;\nheight:auto;\n}\n\n.nav-toggle-label {\n    display: none;\n    cursor: pointer;\n}\n\n.logo {\n  \n    cursor: initial;\n    padding: 1em;\n}\n\n.logo img {\n  width:120%;\n    cursor: pointer;\n}\n\nnav {\n    grid-column: 2 / 5;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    padding-right: 2em;\n    gap: 2em;\n    z-index:99;\n}\n\nnav ul {\n    display: flex;\n    justify-content: flex-end;\n    min-width: 100%;\n}\n\nnav a {\n    margin-left: 1em;\n    margin-bottom: 0;\n    position: relative;\n}\n\nnav a:hover {\n    color: var(--nav-hover);\n}\n\nnav a::before {\n    content: '';\n    display: block;\n    height: 5px;\n    background: var(--nav-hover);\n    position: absolute;\n    top: -1em;\n    left: 0;\n    right: 0;\n\n    transform: scale(0, 1);\n    transition: transform ease-in-out 250ms;\n}\n\nnav a:hover::before {\n    transform: scale(1, 1);\n}\n\n#discord-desktop,\n#twitter-desktop {\n    margin-right: 10px;\n    border: none;\n}\n\n#discord-desktop {\n    filter: invert(65%) sepia(79%) saturate(2780%) hue-rotate(199deg) brightness(90%) contrast(88%);\n}\n\n#twitter-desktop {\n    filter: invert(68%) sepia(75%) saturate(2575%) hue-rotate(179deg) brightness(99%) contrast(88%);\n}\n\n#discord-desktop::before,\n#twitter-desktop::before {\n    display: none;\n}\n\n.fade-in {\n    opacity: 0;\n    transition: 250ms ease-in;\n}\n\n.fade-in.appear {\n    opacity: 1;\n}\n\nh1 {\n    line-height: 1;\n    font-size: 2rem;\n    padding: 2rem;\n    color: var(--yellow);\n}\n\n.mint-title {\n    font-size: 1.5rem;\n}\n#mint-button {\n    background-color:transparent;\n    border:1px solid var(--pink);\n    color:yellow;\nfont-family:pixelFont;\ndisplay:flex;\nmargin-inline:auto;\nfont-size:2rem;\n}\n#mint-button:hover {\n    background-color:transparent;\n    border:1px solid var(--purple);\n    color:yellow;\nfont-family:pixelFont;\ndisplay:flex;\nmargin-inline:auto;\nfont-size:2rem;\ncursor:pointer;\n}\n.address-title {\n    font-size: 1.5rem;\n}\n\n.address-p2k {\n    font-size: 1rem;\n    max-width: 90%;\n    word-wrap: break-word;\n    cursor: pointer;\n    color:yellow;\n}\n\n.address-p2k:hover {\n    color: var(--purple);\n}\n\n.auctions-text {\n    font-size: 1rem;\n    max-width: 90%;\n    word-wrap: break-word;\n}\n\nh2 {\n    text-align: center;\n    text-transform: uppercase;\n    color: var(--pink);\n    font-size: 3rem;\n}\n\nh3 {\n    font-size: 2rem;\n}\n\nh4 {\n    font-size: 1.5rem;\n}\n#modaltitle {\n    color:var(--yellow);\n    text-align:center;\n}\n#modaladdy {\n    display:block;\n text-align:center;\n    width:100%;\n  \n}\n.image-modal {\n    text-align:center;\n    display:flex;\n    margin-inline:auto;\n    width:25%;\n    height:auto;\n}\n#modal-text{\n    display:block;\n text-align:center;\n    width:100%;\n  \n}\n#copyremind {\n    font-size:0.6rem;\n    text-align:center;\n   margin-top:-20px;\n}\np {}\n\n#mint,\n#explore,\n.unsold {\n    font-size: 1.5rem;\n}\n\nsection {\n    min-height: 50vh;\n    display: flex;\n    flex-direction: column;\n    gap: 3rem;\n    align-items: center;\n\n    /* border-glow-here */\n    background: hsla(295, 100%, 59%, 1);\n\n    background: linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    background: -moz-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    background: -webkit-linear-gradient(90deg, hsla(295, 100%, 59%, 1) 0%, hsla(256, 100%, 8%, 1) 1%, hsla(256, 100%, 8%, 1) 99%, hsla(295, 100%, 59%, 1) 100%);\n\n    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=\"#EE2DFF\", endColorstr=\"#0B0029\", GradientType=1);\n}\n\nsection h2 {\n    padding-top: 3rem;\n}\n\n.flex-container,\n.flex-container-faq,\n.flex-container-mint,\n.flex-container-roadmap,\n.flex-container-team {\n    padding-bottom: 3rem;\n}\n\n.s1 {\n    min-height: 100vh;\n    flex-direction: column;\n    justify-content: center;\n    background-color: var(--black);\n\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n    background-position: center;\n    background-size: cover;\n    background-repeat: no-repeat;\n}\n\n.logo {\n    height:auto;\n    width:35%;\n}\n.flex-container {\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    text-transform: capitalize;\n    padding-bottom: 4em;\n}\n\n.flex-container-mint {\n    display: flex;\n    max-width: 90%;\n    margin: 6em auto;\n}\n\n.container-mint {\n    display: flex;\n    flex-direction: column;\n    max-width: 40%;\n    margin: 0 auto;\n}\n.close {\n    color: #aaaaaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n\n  }\n  .maintext {\n    color:var(--yellow)\n  }\n  #closemint:hover {\n    color:yellow;\n    cursor:pointer;\n  }\n  #calendar {\n    display:flex;\n    position:absolute;\n    color:yellow;\n    background-color:transparent;\ntop:50;\nbottom:100;\n    width: 113px;\n    height:50px;\n  }\n  #maintext {\n    color:var(--pink);\n    font-size:small;\n  }\n\n  #subtext{\n    color:var(--yellow);\n    font-size:smaller;\n  }\n  .cont5 {\n    border:1px solid var(--pink)\n  }\n  #calendarheader {\n    position:absolute;\n    bottom:30;\n  left:185;\n    font-size:smaller;\n    margin-bottom:2.5rem;\n  }\n  #datamodal {\n    text-align:center;\n \n  }\n  #pointstext, #addresstext {\n    color:var(--pink)\n  }\n  #pointssubtext, #addresssubtext {\n    color : var (--yellow)\n  }\n  #calendar button {\n    background-color:black;\n    color:var(--pink);\n    cursor:pointer;\n  }\n  #calendar button:hover {\n    background-color:black;\n    color:var(--yellow);\n    border:0.25px solid yellow;\n  }\n#closedashboard {\n    position:absolute;\n display:flex;\n float:left;\n  \n    z-index:999;\n}\n#dashboardmodal {\n    justify-content:center;\n\n}\n#dashboardbtn:hover {\ncursor:pointer;\n}\n#datemodal {\n    text-align:center;\n\n}\n#closedatepoints {\n    margin-right:85%;\n    margin-bottom:2rem;\n}\n.container-mint h3 {\n    color: var(--yellow);\n    margin-bottom: 0;\n}\n\n.container-mint p {\n    margin-top: 0.5em;\n}\n\n.container-mint h2 {\n    text-align: left;\n}\n\n.container-mint-img {\n    gap: 1em;\n    justify-content: center;\n}\n\n.container-mint-img a {\n    text-align: center;\n}\n\n.container-mint img {\n    width: auto;\n    height: auto;\n    max-width: 50%;\n    margin: 0 auto;\n    border-radius: 12px;\n}\n\n.unsold {\n    text-align: center;\n    color: var(--yellow);\n}\n\n.flex-container-roadmap {\n    max-width: 90%;\n    margin: 0 auto;\n    display: flex;\n    gap: 3em;\n}\n\n.container-r1,\n.container-r2 {\n    flex-basis: 50%;\n}\n\n.container-r1 h3,\n.container-r2 h3 {}\n\n.roadmap-title {\n    color: var(--pink);\n    font-size: 3rem;\n}\n\nul {\n    padding: 0;\n}\n\n.container-r1 li,\n.container-r2 li {\n    list-style-type: none;\n}\n\nli h4 {\n    text-transform: uppercase;\n    color: var(--yellow);\n    font-size: 1.5rem;\n}\n\nli p {\n    font-size: 1.25rem;\n    font-family: 'Montserrat', sans-serif;\n}\n\n#cybercity-map {\n    max-width: 80vw;\n    margin: 0 auto;\n    border: 2px solid var(--pink);\n    border-radius: 12px;\n}\n\n.flex-container-team>* {\n    flex-basis: 20%;\n}\n\n.flex-container-team {\n    display: flex;\n    max-width: 90%;\n    margin: 0 auto;\n    flex-direction: row;\n    /* flex-wrap: nowrap; */\n}\n\n.team-column {\n    max-width: 20%;\n    text-align: center;\n}\n\n.team-member-name {\n    text-transform: uppercase;\n    color: var(--yellow);\n    margin-bottom: 2%;\n}\n\n.team-member-description {\n    text-transform: uppercase;\n    font-size: 1.5rem;\n    word-wrap: break-word;\n\n}\n\n.team-member-image {\n    max-width: 60%;\n    border-radius: 12px;\n}\n\n.flex-container-faq {\n    display: flex;\n    flex-direction: column;\n    max-width: 90%;\n    gap: 0;\n}\n\n.faq-header,\n.faq-answer {\n    text-align: center;\n    margin: 0 auto;\n    max-width: 60%;\n}\n\n.faq-header {\n    text-transform: uppercase;\n    color: var(--yellow);\n    margin-bottom: 0.25rem;\n    font-size: 1.5rem;\n}\n\n.faq-answer {\n    margin-bottom: 1em;\n    font-size: 1.25rem;\n    font-family: 'Montserrat', sans-serif;\n}\n\n.faq-links {\n    border: none;\n}\n\n#ergopixel-img {\n    border: 3px solid var(--pink);\n}\n\n.footer-container {\n    display: flex;\n    flex-direction: column;\n}\n\n.footer-container a {\n    border: none;\n}\n\n.footer-logo {\n    width: 10%;\n    margin-top: 1em;\n    padding-bottom: 1em;\n}\n.ccimage {\n    width:100px;\n    height:100px;\n}\n.assetdescription {\n    font-size:larger;\n    color:var(--pink)\n}\n.assetcont {\n    border:1px solid var(--purple)\n}\n\n.play-button {\n    background-color:Yellow;\n}\n#dashboard, #audio-nfts {\n    display:block;\n    justify-content:center;\n    align-items:center;\n    text-align:Center;\n    background-color:black;\n}\n#copyme:hover {\n    color:yellow;\n}\n#address {\n    margin-inline:auto;\n    text-align:center;\n}\n.mint-modal-message {\n    position: absolute;\n    left: 50%;\n    top:15%;\n    transform: translateX(-50%);\n    opacity: 0;\n    background-color: #ffffff;\n    color: var(--pink);\n    border: 1px solid #3f3f3f;\n    padding: 10px;\n    border-radius: 5px;\n    animation-name: fadeInUp;\n    animation-duration: 0.5s;\n    animation-timing-function: ease-out;\n    animation-fill-mode: forwards;\n  }\n  \n  @keyframes fadeInUp {\n    0% {\n      opacity: 0;\n      transform: translate(-50%, 50%);\n    }\n    100% {\n      opacity: 1;\n      transform: translate(-50%, 0);\n    }\n  }\n.assettitle {\n    font-size:larger;\n    color:yellow;\n}\n.footer-logo-container {\n    display: flex;\n    justify-content: center;\n    border-bottom: 2px solid var(--pink);\n    max-width: 90%;\n    margin: 0 auto;\n}\na.disabled {\n    background-color: red;\n    cursor: not-allowed;\n  }\n  #mintbtn[disabled] {\n    background-color: red;\n  }\n  #mintbtn:hover {\n    cursor:pointer;\n  }\n.svg-container {\n    display: flex;\n    justify-content: space-around;\n}\n\n.svg-container a {\n    width: 50%;\n    text-align: center;\n}\n\n.discord,\n.twitter {\n    max-width: 50%;\n}\n\n.footer-text {\n    margin-bottom: 1em;\n    text-align: center;\n}\n\n.svg-container {\n    justify-content: center;\n    margin: auto auto;\n    min-width: 50%;\n}\n\n.svg-container a {\n    margin: 0;\n    gap: 0;\n}\n\n.svg-container a img {\n    padding-top: 1em;\n    width: 40%;\n}\n\n.footer-logo {\n    width: 10%;\n}\n\n.footer-text {\n    padding: 1em;\n}\n\n.twitter,\n.discord {\n    filter: invert(98%) sepia(95%) saturate(6%) hue-rotate(306deg) brightness(103%) contrast(100%);\n}\n\n#wallet {\n    cursor: pointer;\n}\n\n#wallet-connector {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    min-width: 50%;\n    min-height: 30%;\n    padding: 1em;\n    background-color: black;\n    border-radius: 20px;\n    color: var(--yellow);\n    text-shadow: 1px 1px #258ae8;\n    display: none;\n    z-index: 200;\n}\n\n#wallet-connector p {\n    padding-bottom: 2%;\n    font-size: 1.5rem;\n}\n\n#wallet-connector input {\n    width: 100%;\n    margin: 0 auto;\n    font-size: 1.25rem;\n}\n\n#wallet-connector.open {\n    z-index: 100;\n    background-color: var(--blue);\n    border: 2px var(--pink) solid;\n    display: block;\n}\n\n#wallet-address-text {\n    font-weight: 100;\n}\n\n#wallet-output {\n    padding-top: 2%;\n    color: red;\n}\n\n#wallet-buttons {\n    display: flex;\n    justify-content: end;\n    gap: 1em;\n    width: 100%;\n    margin: 0 auto;\n}\n\n.wallet-button {\n    all: unset;\n    min-width: 10%;\n    background-color: var(--pink);\n    border: 1px var(--pink) solid;\n    text-align: center;\n    font-size: 1.5rem;\n    border-radius: 10px;\n    cursor: pointer;\n    transition: ease-in 0.2s;\n    padding: 1%;\n    color: var(--yellow);\n    text-shadow: 1px 1px #258ae8;\n}\n\n.wallet-button:hover {\n    border: 2px #258ae8 solid;\n}\n\n#finish {\n    background-color: #258ae8;\n    border: 2px #258ae8 solid;\n}\n\n#finish:hover {\n    border: 2px var(--pink) solid;\n}\n\ninput[type=text],\ntextarea {\n    border: 2px #f711f7 solid;\n    background-color: var(--bblue);\n    border-radius: 20px;\n    color: var(--yellow);\n    font-family: pixelFont;\n}\n\ninput[type=text]:focus,\ntextarea:focus,\ninput[type=text]:hover,\ntextarea:hover {\n    border: 2px var(--pink) solid;\n}\n\n#dino-mobile,\n#twitter-mobile,\n#discord-mobile {\n    display: none;\n}\n\nli #dino-image {\n    flex-grow: 0;\n    flex-basis: 10%;\n}\n\n#dino-image {\n    width: auto;\n    height: auto;\n    max-width: 25px;\n    max-height: 20px;\n}\n\nli #header-image {\n    flex-grow: 1;\n    flex-basis: 10%;\n}\n\n#header-image {\n    width: auto;\n    height: auto;\n    max-width: 30px;\n    max-height: 25px;\n    border-color: red;;\n}\n\n.benefits-list {\n    padding-left: 4%;\n}\n\n.benefit-title {\n    font-size: 1.9rem;\n    color: var(--pink);\n}\n\n.benefit {\n    font-size: 1.25rem;\n    color:var(--yellow)\n}\n\n.container-r1,\n.container-r2 {\n    margin: 0 auto;\n}\n\n#roadmap-switch {\n    margin-bottom: 4em;\n    cursor: pointer;\n    font-size: 1.5rem;\n    max-width: none;\n}\n\n@media all and (max-width : 60em) {\n    header {\n        display: block;\n        text-align: center;\n        z-index: 999;\n        min-width: 10vh;\n    }\n    body{\n        width:100%;\n        overflow-x:hidden;\n        \n    }\niframe#iframetrailer {\n    width:75%;\n    height:auto;\n}\n    .logo {\n        padding-top: 0.5em;\n        padding-bottom: 0.5em;\n        font-size: 2rem;\n       margin-inline:auto;\n    }\n\n    #cybercity-map {\n        max-width: 90%;\n        margin: 0 auto;\n    }\n\n    /* Look for any nav as a preceding sibling */\n    .nav-toggle:checked~nav {\n        transform: scale(1, 1);\n    }\n\n    .nav-toggle:checked~nav .nav-links li a {\n        opacity: 1;\n        transition: opacity 250ms ease-in-out 350ms;\n    }\n\n    .nav-toggle-label {\n        position: absolute;\n        top: 0;\n        left: 0;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        margin-left: 1em;\n    }\n\n    /* Create hamburger */\n    .nav-toggle-label>span,\n    .nav-toggle-label>span::before,\n    .nav-toggle-label>span::after {\n        display: block;\n        background: var(--pink);\n        height: 2px;\n        width: 2em;\n        border-radius: 2px;\n        position: relative;\n    }\n\n    /* Make sure the pseudo-elements have content so they display */\n    .nav-toggle-label>span::before,\n    .nav-toggle-label>span::after {\n        content: '';\n        position: absolute;\n    }\n\n    /* Move the before pseudo-element down */\n    .nav-toggle-label>span::before {\n        bottom: 7px;\n    }\n\n    /* Move the after pseudo-element up */\n    .nav-toggle-label>span::after {\n        top: 7px;\n    }\n\n    nav {\n        position: absolute;\n        text-align: left;\n        top: 100%;\n        left: 0;\n        background-color: var(--bg-header);\n\n        transform: scale(1, 0);\n        transform-origin: top;\n        transition: transform 400ms ease-in-out;\n    }\n\n    nav ul {\n        display: block;\n    }\n\n    nav a {\n        margin-left: 0;\n        border: none;\n    }\n\n    nav a::before {\n        display: none;\n    }\n\n    .nav-links {\n        padding-top: 1em;\n        width: 100vw;\n        border-bottom: 2px solid var(--pink);\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    .nav-links>li {\n        margin-bottom: 1em;\n        margin-left: 1em;\n    }\n\n    .nav-links>li>a {\n        opacity: 0;\n        transition: opacity 100ms ease-in-out;\n    }\n\n    .nav-links>li>a:hover {\n        color: var(--nav-hover);\n    }\n\n\n    .flex-container,\n    .flex-container-faq,\n    .flex-container-mint,\n    .flex-container-roadmap,\n    .flex-container-team {\n        flex-direction: column;\n    }\n\n    .flex-container-mint>* {\n        margin: 0 auto;\n        min-width: 90%;\n    }\n\n    .container-mint h2 {\n        text-align: center;\n    }\n\n    .flex-container-mint {\n        margin: 3rem 0;\n        padding: 0;\n        width: 90%;\n    }\n\n    .flex-container-mint h2 {\n        min-width: 90%;\n    }\n\n    .container-mint img {\n        max-width: 75%;\n    }\n\n\n    .container-mint img {\n        width: auto;\n        height: auto;\n        max-width: 80%;\n        margin: 0 auto;\n    }\n\n    .faq-header,\n    .faq-answer {\n        text-align: center;\n        margin: 1em auto;\n        max-width: 90%;\n    }\n\n    .flex-container-team {\n        flex-direction: column;\n    }\n\n    .flex-container-team>* {\n        flex-basis: 100%;\n    }\n\n    .flex-container-team {\n        justify-content: center;\n        align-items: center;\n    }\n\n    .team-member-image {\n        margin-top: 3rem;\n        max-width: 60%;\n    }\n\n    .team-column {\n        min-width: 90%;\n    }\n\n    .footer-logo {\n        width: 40%;\n    }\n\n    #wallet-connector {\n        width: 90% !important;\n    }\n\n    #wallet-connector p {\n        padding-bottom: 2%;\n        font-size: 1.25rem;\n    }\n\n    #wallet-connector input {\n        width: 100%;\n        margin: 0 auto;\n        font-size: 1.125rem;\n    }\n\n    .wallet-button {\n        font-size: 1.125rem;\n    }\n\n    #dino-desktop,\n    #discord-desktop,\n    #twitter-desktop {\n        display: none;\n    }\n\n    #dino-mobile,\n    #twitter-mobile,\n    #discord-mobile {\n        display: inline-block;\n        padding-bottom: 0;\n        padding-top: 0;\n    }\n\n    .desktop-li {\n        display: none;\n    }\n}\n\n@media all and (max-width : 40em) {\n    #nft-container {\n        flex-direction: column;\n    }\n\n    .auction-card-modal h2 {\n        font-size: 1rem;\n    }\n\n    .nav-links {\n        font-size: 1rem;\n    }\n\n    .roadmap-title {\n        font-size: 2rem;\n    }\n\n    h1 {\n        font-size: 1rem;\n    }\n\n    h2 {\n        font-size: 1.5rem;\n    }\n\n    h3 {\n        font-size: 1rem;\n    }\n\n    .flex-container-faq {\n        max-width: 90%;\n    }\n\n    li h4 {\n        font-size: 1.5rem;\n    }\n\n    .benefits-list {\n        padding-left: 4%;\n    }\n\n    .benefit-title {\n        font-size: 1.3rem;\n    }\n\n    .benefit {\n        font-size: 1.125rem;\n    }\n\n    li p {\n        font-size: 1.25rem;\n    }\n\n    .team-member-name {\n        font-size: 1.5rem;\n    }\n\n    .team-member-description {\n        font-size: 1.25rem;\n    }\n\n    .faq-header {\n        font-size: 1.5rem;\n    }\n\n    .faq-answer {\n        word-wrap: break-word;\n        font-size: 1.25rem;\n    }\n\n    .footer-logo {\n        width: 40%;\n    }\n\n    .footer-text {\n        font-size: 1rem;\n    }\n\n    #wallet-connector {\n        width: 90% !important;\n        top: 60%;\n    }\n\n    #wallet-connector p {\n        padding-bottom: 2%;\n        font-size: 1rem;\n    }\n\n    #wallet-connector input {\n        width: 100%;\n        margin: 0 auto;\n        font-size: 1rem;\n    }\n\n    .wallet-button {\n        font-size: 1rem;\n    }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -755,12 +755,13 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var unsignedTransaction;
+// mint function
 function mint() {
   return _mint.apply(this, arguments);
-}
+} // mint btn styling to make sure user cannot spam click
 function _mint() {
   _mint = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var cypxTokenId, creationHeight, amountToSend, inputs, userAddress, cybercitizensWallet, ergValue, ergs;
+    var cypxTokenId, creationHeight, amountToSend, inputs, userAddress, cybercitizensWallet, mintModal, message, ergValue, ergs;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
@@ -770,7 +771,7 @@ function _mint() {
           return ergo.get_current_height();
         case 4:
           creationHeight = _context2.sent;
-          amountToSend = 20000000000;
+          amountToSend = 20000000000; // 20 erg to be sent
           _context2.next = 8;
           return ergo.get_utxos();
         case 8:
@@ -779,16 +780,36 @@ function _mint() {
           return ergo.get_change_address();
         case 11:
           userAddress = _context2.sent;
-          cybercitizensWallet = "9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf";
+          cybercitizensWallet = "9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf"; //fleet sdk tx builder
           unsignedTransaction = new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_0__.TransactionBuilder(creationHeight).from(inputs).to(new _fleet_sdk_core__WEBPACK_IMPORTED_MODULE_1__.OutputBuilder(amountToSend, cybercitizensWallet)).sendChangeTo(userAddress).payMinFee().build("EIP-12");
+          // note build "eip-12" is passed as a parameter for nautilus wallet
           console.log("Inputs:", inputs);
           console.log("Outputs:", unsignedTransaction.outputs);
+          //build and return unsigned tx
           return _context2.abrupt("return", unsignedTransaction);
         case 19:
           _context2.prev = 19;
           _context2.t0 = _context2["catch"](0);
+          //error logging, if error message includes ergo not defined, display please connect wallet, if error message includes > meaning it is telling the user they do not have enough funds, take the number after nanoErgs and convert to ergs and display to the user how many funds are needed
           if (_context2.t0.message.includes("not defined")) {
-            alert("Please connect your wallet.");
+            ergoConnector.nautilus.connect();
+
+            // display the wallet connected message in the mintModal element with smooth animation
+            mintModal = document.getElementById('mintModal');
+            message = document.createElement('div');
+            document.getElementById("wallet-btn").style.display = "none";
+            message.style.backgroundColor = "black";
+            message.classList.add('mint-modal-message');
+            message.innerText = 'Wallet Connected!';
+            mintModal.appendChild(message);
+            setTimeout(function () {
+              // set the opacity of the message to 0 to fade it out
+              message.style.opacity = 0;
+              setTimeout(function () {
+                // remove the message element from the mintModal
+                mintModal.removeChild(message);
+              }, 500); // wait for half a second for the message to finish fading out
+            }, 2000); // wait for 2 seconds before starting the fade out animation
           } else if (_context2.t0.message.includes(">")) {
             ergValue = _context2.t0.message.split("nanoErgs:")[1].split(">")[0].trim();
             ergs = parseInt(ergValue) / 1000000000;
@@ -806,6 +827,7 @@ function _mint() {
 }
 var mintbtn = document.getElementById("mintbtn");
 var mintbtnText = mintbtn.innerText;
+// switch mint button to disabled class and show please wait while transaction is being built...
 mintbtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
   var _unsignedTransaction, signedTransaction, txId;
   return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -815,6 +837,7 @@ mintbtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_
         mintbtn.disabled = true;
         mintbtn.classList.add("disabled");
         mintbtn.innerHTML = "<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span> Please wait while the transaction is being built...";
+        // on mint function, define unsignedtransaction and sign it via nautilus and submit it
         _context.next = 6;
         return mint();
       case 6:
@@ -856,7 +879,7 @@ mintbtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_
     }
   }, _callee, null, [[0, 20, 24, 29]]);
 })));
-
+//re - enable mint button afterward 
 // Add an event listener for beforeunload event
 window.addEventListener("beforeunload", function () {
   // Check if mintbtn is disabled, and re-enable it
@@ -6252,6 +6275,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var mintbtn = document.getElementById("mintbtn");
 var connectbtn = document.getElementById("connectbtn");
+
+//connect to wallet
 function connect() {
   return _connect.apply(this, arguments);
 } //const audioNFTs = await displayAudioNFTs(UserAddress);
@@ -6267,32 +6292,126 @@ function connect() {
 //});
 //audioNFTsContainer.innerHTML = audioNFTsHTML;
 //}
+//display cypx amount 
 function _connect() {
-  _connect = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-    var ConnectUserWallet, UserAddress, cypxAmount, _mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
+  _connect = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+    var ConnectUserWallet, currentDate, currentYear, currentMonth, currentDay, numDays, calendarHeader, calendarDiv, _loop, i, UserAddress, cypxAmount, _mintbtn, UserBalance, UserBalanceErg, dashboardbtn, assets, assetsHTML;
+    return _regeneratorRuntime().wrap(function _callee6$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
         case 0:
-          _context3.prev = 0;
-          _context3.next = 3;
+          _context7.prev = 0;
+          _context7.next = 3;
           return ergoConnector.nautilus.connect();
         case 3:
-          ConnectUserWallet = _context3.sent;
+          ConnectUserWallet = _context7.sent;
           ConnectUserWallet;
-          document.getElementById("calendar").style.display = "flex";
-          _context3.next = 8;
+
+          // Get the current date
+          currentDate = new Date();
+          currentYear = currentDate.getFullYear();
+          currentMonth = currentDate.getMonth();
+          currentDay = currentDate.getDate(); // Get the number of days in the current month
+          numDays = new Date(currentYear, currentMonth + 1, 0).getDate(); // Display the current month
+          calendarHeader = document.createElement("h3");
+          calendarHeader.style.display = "block";
+          calendarHeader.setAttribute('id', 'calendarheader');
+          calendarHeader.style.textAlign = "center";
+          calendarHeader.textContent = new Date(currentYear, currentMonth, 1).toLocaleDateString('default', {
+            month: 'long'
+          });
+          calendarDiv = document.getElementById("calendar");
+          calendarDiv.style.display = "flex";
+          calendarDiv.appendChild(calendarHeader);
+
+          // Add input field for address search
+
+          // Generate buttons for each day of the current month
+          _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop(i) {
+            var button, buttonDate;
+            return _regeneratorRuntime().wrap(function _loop$(_context6) {
+              while (1) switch (_context6.prev = _context6.next) {
+                case 0:
+                  button = document.createElement("button");
+                  button.textContent = i;
+                  buttonDate = new Date(currentYear, currentMonth, i);
+                  if (buttonDate > currentDate) {
+                    button.style.display = "none";
+                  }
+                  button.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+                    var requestDate, requestBody, response, data, datamodal;
+                    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+                      while (1) switch (_context5.prev = _context5.next) {
+                        case 0:
+                          requestDate = "".concat(currentMonth + 1, "/").concat(i, "/").concat(currentYear);
+                          requestBody = {
+                            "name": "barman",
+                            "date": requestDate
+                          };
+                          _context5.next = 4;
+                          return fetch("https://leaderboard-backend.herokuapp.com/api/leaderboard", {
+                            method: "POST",
+                            body: JSON.stringify(requestBody),
+                            headers: {
+                              "Content-Type": "application/json"
+                            }
+                          });
+                        case 4:
+                          response = _context5.sent;
+                          _context5.next = 7;
+                          return response.json();
+                        case 7:
+                          data = _context5.sent;
+                          console.log(data);
+
+                          // Loop through data and create new HTML elements for each object
+                          datamodal = document.getElementById("datamodal");
+                          datamodal.style.display = "block";
+                          datamodal.innerHTML = "<h1> Data for ".concat(requestDate);
+                          data.data.forEach(function (item) {
+                            var points = item.points;
+                            var address = item.address;
+                            var itemElement = document.createElement("div");
+                            itemElement.innerHTML = "<div class = \"cont5\"><p class = \"maintext\">Address:</p> <p class = \"subtext\"> ".concat(address, "</p><p class = \"maintext\">Points:</p> <p class = \"subtext\"> ").concat(points, "</p></div>");
+                            datamodal.appendChild(itemElement);
+                          });
+                        case 13:
+                        case "end":
+                          return _context5.stop();
+                      }
+                    }, _callee5);
+                  })));
+                  calendarDiv.appendChild(button);
+                case 6:
+                case "end":
+                  return _context6.stop();
+              }
+            }, _loop);
+          });
+          i = 1;
+        case 20:
+          if (!(i <= numDays)) {
+            _context7.next = 25;
+            break;
+          }
+          return _context7.delegateYield(_loop(i), "t0", 22);
+        case 22:
+          i++;
+          _context7.next = 20;
+          break;
+        case 25:
+          _context7.next = 27;
           return ergo.get_change_address();
-        case 8:
-          UserAddress = _context3.sent;
-          _context3.next = 11;
+        case 27:
+          UserAddress = _context7.sent;
+          _context7.next = 30;
           return displayCypxAmount(UserAddress);
-        case 11:
-          cypxAmount = _context3.sent;
+        case 30:
+          cypxAmount = _context7.sent;
           _mintbtn = document.getElementById("mintbtn");
-          _context3.next = 15;
+          _context7.next = 34;
           return ergo.get_balance();
-        case 15:
-          UserBalance = _context3.sent;
+        case 34:
+          UserBalance = _context7.sent;
           UserBalanceErg = UserBalance / Math.pow(10, 9);
           dashboardbtn = document.getElementById("dashboardbtn");
           dashboardbtn.style.display = "flex";
@@ -6302,47 +6421,48 @@ function _connect() {
           document.getElementById("userbalance").style.display = "flex";
           document.getElementById("userbalance").innerHTML = "<img src=\"./dist/assets/ergicon.png\" id=\"balanceicon\">   " + UserBalanceErg;
           document.getElementById("cypxbalance").innerHTML = "<img src=\"./dist/assets/cypxicon.png\" id=\"cypxicon\">" + cypxAmount / Math.pow(10, 4);
-          _context3.next = 27;
+          _context7.next = 46;
           return displayCybercitizenAssets(UserAddress);
-        case 27:
-          assets = _context3.sent;
+        case 46:
+          assets = _context7.sent;
+          // if ergoConnector is not defined, show alert to download nautilus.
           assetsHTML = '';
-          _context3.next = 34;
+          _context7.next = 53;
           break;
-        case 31:
-          _context3.prev = 31;
-          _context3.t0 = _context3["catch"](0);
-          if (_context3.t0.message.includes("ergoConnector")) {
+        case 50:
+          _context7.prev = 50;
+          _context7.t1 = _context7["catch"](0);
+          if (_context7.t1.message.includes("ergoConnector")) {
             alert('Please download Nautilus wallet : https://chrome.google.com/webstore/detail/nautilus-wallet/gjlmehlldlphhljhpnlddaodbjjcchai');
           } else {
-            alert("Error connecting to wallet: ".concat(_context3.t0));
+            alert("Error connecting to wallet: ".concat(_context7.t1));
           }
-        case 34:
+        case 53:
         case "end":
-          return _context3.stop();
+          return _context7.stop();
       }
-    }, _callee3, null, [[0, 31]]);
+    }, _callee6, null, [[0, 50]]);
   }));
   return _connect.apply(this, arguments);
 }
 function displayCypxAmount(_x) {
   return _displayCypxAmount.apply(this, arguments);
-}
+} //for audio nft viewing when it is implemented
 function _displayCypxAmount() {
-  _displayCypxAmount = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(userAddress) {
+  _displayCypxAmount = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(userAddress) {
     var response, data, cypxAmount;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regeneratorRuntime().wrap(function _callee7$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
         case 0:
-          _context4.next = 2;
+          _context8.next = 2;
           return fetch("https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/".concat(userAddress));
         case 2:
-          response = _context4.sent;
-          _context4.next = 5;
+          response = _context8.sent;
+          _context8.next = 5;
           return response.json();
         case 5:
-          data = _context4.sent;
-          cypxAmount = 0;
+          data = _context8.sent;
+          cypxAmount = 0; //look for asset names CYPX
           data.items.forEach(function (item) {
             item.assets.forEach(function (asset) {
               if (asset.name === "CYPX") {
@@ -6350,13 +6470,14 @@ function _displayCypxAmount() {
               }
             });
           });
+          //log cypx amount and display on screen
           console.log("CYPX Amount: ".concat(cypxAmount));
-          return _context4.abrupt("return", cypxAmount);
+          return _context8.abrupt("return", cypxAmount);
         case 10:
         case "end":
-          return _context4.stop();
+          return _context8.stop();
       }
-    }, _callee4);
+    }, _callee7);
   }));
   return _displayCypxAmount.apply(this, arguments);
 }
@@ -6365,9 +6486,11 @@ function formatTime(seconds) {
   var remainingSeconds = Math.floor(seconds % 60);
   return "".concat(minutes, ":").concat(remainingSeconds.toString().padStart(2, '0'));
 }
+//display cybercitizens in dashboard modal
 function displayCybercitizenAssets(_x2) {
   return _displayCybercitizenAssets.apply(this, arguments);
-} // async function displayAudioNFTs(userAddress) {
+} // DISPLAY AUDIO NFT FUNCTIONALITY AS WELL AS PLAYING AUDIO NFT FUNCTIONALITY, TO BE IMPLEMENTED
+// async function displayAudioNFTs(userAddress) {
 //   const response = await fetch(`https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/${userAddress}`);
 //   const data = await response.json();
 //   const audioNFTs = [];
@@ -6477,21 +6600,32 @@ function displayCybercitizenAssets(_x2) {
 // });
 // }
 //)}
+// display dashboard on click - showing ccs
 function _displayCybercitizenAssets() {
-  _displayCybercitizenAssets = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(userAddress) {
-    var response, data, cybercitizenAssets, assetsHTML, dashboard;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
+  _displayCybercitizenAssets = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(userAddress) {
+    var response, data, _dashboard, cybercitizenAssets, assetsHTML, dashboard;
+    return _regeneratorRuntime().wrap(function _callee8$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
         case 0:
-          _context5.next = 2;
-          return fetch("https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/".concat(userAddress));
+          _context9.next = 2;
+          return fetch( // fetch cybercitizen assets by address
+          "https://api.ergoplatform.com/api/v1/boxes/unspent/byAddress/".concat(userAddress));
         case 2:
-          response = _context5.sent;
-          _context5.next = 5;
+          response = _context9.sent;
+          _context9.next = 5;
           return response.json();
         case 5:
-          data = _context5.sent;
-          cybercitizenAssets = [];
+          data = _context9.sent;
+          if (!(!data.items || data.items.length === 0)) {
+            _context9.next = 11;
+            break;
+          }
+          _dashboard = document.getElementById("dashboard");
+          _dashboard.style.backgroundColor = "transparent";
+          _dashboard.innerHTML = "\n          <div style=\"text-align: center; margin-top:5rem\">\n            <p style = \"color:var(--yellow)\"> You have no CyberCitizens :(</p>\n            <p style=\"color:var(--pink)\">Check out <a href=\"https://www.skyharbor.io/collection/cybercitizens\" target=\"_blank\">SkyHarbor</a> to grab some!</p>\n          </div>\n        ";
+          return _context9.abrupt("return", []);
+        case 11:
+          cybercitizenAssets = []; // look for any assets named "Cybercitizen" and take the number after it and save as assetNum, use assetnum in image path to display correct image
           data.items.forEach(function (item) {
             item.assets.forEach(function (asset) {
               if (asset.name.includes("Cybercitizen")) {
@@ -6506,19 +6640,19 @@ function _displayCybercitizenAssets() {
               }
             });
           });
-          assetsHTML = '';
+          // render assets into modal
+          assetsHTML = "";
           cybercitizenAssets.forEach(function (asset) {
-            assetsHTML += "\n          <div class=\"assetcont\">\n            <p class = \"assettitle\"></p> <p class=\"assetdescription\">".concat(asset.name, "</p>\n            <p class=\"assettitle\">Token ID:</p> <p class=\"assetdescription\"> ").concat(asset.tokenId, "</p>\n            <img class=\"ccimage\" src=\"").concat(asset.imgSrc, "\" />\n            <img class=\"ccimage\" src=\"").concat(asset.imgSrcingame, "\" />\n          </div>\n        ");
-            console.log(JSON.stringify(cybercitizenAssets));
+            assetsHTML += "\n          <div class=\"assetcont\">\n            <p class=\"assettitle\"></p> <p class=\"assetdescription\">".concat(asset.name, "</p>\n            <p class=\"assettitle\">Token ID:</p> <p class=\"assetdescription\"> ").concat(asset.tokenId, "</p>\n            <img class=\"ccimage\" src=\"").concat(asset.imgSrc, "\" />\n            <img class=\"ccimage\" src=\"").concat(asset.imgSrcingame, "\" />\n          </div>\n        ");
           });
           dashboard = document.getElementById("dashboard");
           dashboard.innerHTML += assetsHTML;
-          return _context5.abrupt("return", cybercitizenAssets);
-        case 13:
+          return _context9.abrupt("return", cybercitizenAssets);
+        case 18:
         case "end":
-          return _context5.stop();
+          return _context9.stop();
       }
-    }, _callee5);
+    }, _callee8);
   }));
   return _displayCybercitizenAssets.apply(this, arguments);
 }
@@ -6528,6 +6662,7 @@ displaybtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__
     while (1) switch (_context.prev = _context.next) {
       case 0:
         dashboardmodal.style.display = "block";
+        // close dashboard on click
       case 1:
       case "end":
         return _context.stop();
@@ -6546,7 +6681,51 @@ closebtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/
     }
   }, _callee2);
 })));
-connectbtn.addEventListener("click", connect);
+document.getElementById("copyme").addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+  var textToCopy;
+  return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+    while (1) switch (_context3.prev = _context3.next) {
+      case 0:
+        textToCopy = document.getElementById("copyme").textContent;
+        _context3.prev = 1;
+        _context3.next = 4;
+        return navigator.clipboard.writeText(textToCopy);
+      case 4:
+        alert("Text copied to clipboard!");
+        _context3.next = 10;
+        break;
+      case 7:
+        _context3.prev = 7;
+        _context3.t0 = _context3["catch"](1);
+        console.error("Failed to copy text: ", _context3.t0);
+      case 10:
+      case "end":
+        return _context3.stop();
+    }
+  }, _callee3, null, [[1, 7]]);
+})));
+
+// connect to wallet on click connect btn
+
+connectbtn.addEventListener("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+    while (1) switch (_context4.prev = _context4.next) {
+      case 0:
+        connect();
+        connectbtn.classList.add("disabled");
+        connectbtn.disabled = true;
+      case 3:
+      case "end":
+        return _context4.stop();
+    }
+  }, _callee4);
+})));
+var datamodal = document.getElementById("datamodal");
+
+// Hide the modal when the user clicks outside of it
+window.addEventListener("click", function (event) {
+  datamodal.style.display = "none";
+});
 })();
 
 /******/ })()

@@ -39,27 +39,32 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <span></span>
         </label>
     </header>
+    <div id="calendar"></div>
     <div class = "modal" id="dashboardmodal">
         <span class="close" id="closedashboard">&times;</span>
 <div class="dashboardcont">   <div id="dashboard"></div>
-<div id="calendar"></div>
+</div>
 <div id = "audio-nfts" style="display:none;"><h1>CyberVerse Audio NFTs</h1></div>
 </div>
 </div>
-<div id="calendar" style="display:none;"></div>
-<div class="modal" id="datemodal">    <span class="close" id="closedatepoints">&times;</span><br><div id="datepoints"></div></div>
+
+
     <section class="s1 section fade-in">
         <div class="container"><span id="usertokens"></span></div>
+        <div class = "modal" id = "datamodal"> <span class="close" id="closedatamodal">&times;</span></div>
         <div id="mintModal" class="modal">
-
+    
       
     <!-- Modal content -->
     <div class="modal-content" id="mintModal">
-      <span class="close" id="closemint">&times;</span>
+        <span class="close" id="closemint">&times;</span>
       <h4 id="modaltitle">Wave 3 CyberCitizen NFT Mint</h4>
-
-<button class="cyberbtn" id = "mintbtn" style="display:inline-flex; margin-left:45%;text-align:center; justify-content:center; align-items:center;">MINT</button>
+   <h4 style="text-align:center; color:var(--pink)"> Price: 20 ERG </h4>
+ 
+<a class="cyberbtn" id = "mintbtn" style="display:block; margin-inline:auto;text-align:center; justify-content:center; align-items:center;">MINT</a>
+<span id ="address" ><p>Address: <br> <span id = "copyme">9eXCfrmgJSuYKS6hf32snZHZYCFvVeAsBU6LigaKkd5hzjUB3Rf</span></p></span>
       <p id="modal-text">Or scan the QR Code below to continue:</p>
+   
       <img class = "image-modal" src="./dist/assets/qr.png">
   </div>
   <script>const mintmodal = document.getElementById("mintModal")
@@ -85,7 +90,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                   <a id="explore" href="./dist/pages/gen2/explore-gen2.html">EXPLORE</a> 
               
               </div>
+         
           </section>
+
           <section class="s2 section fade-in" id="mint">
               <div class="flex-container-mint">
                   <div class="container-mint container-mint-img">
@@ -118,7 +125,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <h2>FAQ</h2>
             <div id="faqcont">
             <h5 class="benefit-title">Who are CyberCitizens?</h5>
-            <p class="benefit">CyberCitizens are playable characters living in the CyberVerse with multiple utilities. Find more in our <a style="border:none;" href="https://docs.cyberversegame.io/cyberverse-whitepaper">whitepaper</a>   </li>
+            <p class="benefit">CyberCitizens are playable characters living in the CyberVerse with multiple utilities. Find more in our <a style="border:none;" href="https://docs.cyberversegame.io/whitepaper-v3./">whitepaper</a>   </li>
           <h5 class="benefit-title">What is the mint price?</h5>
           <p class="benefit">20 ERG</p>
            <h5 class="benefit-title"> How to mint?</h5>

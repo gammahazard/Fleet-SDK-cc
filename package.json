@@ -22,15 +22,10 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-
-
-
-
     "@fleet-sdk/core": "^0.1.0-alpha.19",
     "buffer": "^6.0.3",
     "copy-webpack-plugin": "^11.0.0",
-  
-
+    "dotenv-webpack": "^8.0.1",
     "path": "^0.12.7"
   }
 }
