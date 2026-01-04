@@ -10,31 +10,87 @@ A specialized transaction construction engine for the Ergo blockchain. This util
 
 ---
 
-## ⚡ Technical capabilities
+## ⚡ Technical Capabilities
 
-* **Custom UTXO Selection:** Manually filters input boxes based on asset availability.
-* **Token Minting Logic:** Handles the complex registers required for creating native assets on the Ergo ledger.
-* **EIP-12 Compliance:** Formats transaction context for external signing, ensuring hardware wallet compatibility.
+* **Custom UTXO Selection:** Fetches and filters input boxes via `ergo.get_utxos()`.
+* **Token Transfer Logic:** Handles ERG transfers with automatic change address routing.
+* **EIP-12 Compliance:** Formats transaction context for external wallet signing (Nautilus).
+* **Error Handling:** User-friendly messages for insufficient funds and wallet connection states.
 
 ---
 
 ## 💻 Implementation Logic
 
-The core builder logic constructs a state-change request from raw inputs.
+The core builder logic constructs a state-change request from raw UTXOs:
 
 ```javascript
 import { OutputBuilder, TransactionBuilder } from "@fleet-sdk/core";
 
-// Constructing a Token Transfer with automatic fee calculation
+const inputs = await ergo.get_utxos();
+const userAddress = await ergo.get_change_address();
+const creationHeight = await ergo.get_current_height();
+
 unsignedTransaction = new TransactionBuilder(creationHeight)
-  .from(inputs) // Raw UTXOs from explorer
+  .from(inputs)                              // Raw UTXOs from wallet
   .to(
     new OutputBuilder(amountToSend, recipientWallet)
-      .addTokens({
-        tokenId: cypxTokenId,
-        amount: "100000",
-      })
   )
-  .sendChangeTo(userAddress) // UTXO change address handling
-  .payMinFee()
-  .build("EIP-12"); // Serialize for dApp connector
+  .sendChangeTo(userAddress)                 // UTXO change routing
+  .payMinFee()                               // Automatic fee calculation
+  .build("EIP-12");                          // Nautilus-compatible format
+
+const signedTx = await ergo.sign_tx(unsignedTransaction);
+const txId = await ergo.submit_tx(signedTx);
+```
+
+---
+
+## 📁 Project Structure
+
+```
+Fleet-SDK-cc/
+├── src/
+│   ├── fleet.js          # Core transaction builder logic
+│   ├── app.js            # Application entry
+│   ├── index.js          # Module exports
+│   ├── index.html        # UI template
+│   ├── assets/           # Images & fonts
+│   ├── styles/           # CSS stylesheets
+│   └── js/               # Helper scripts
+├── dist/                 # Webpack build output (GitHub Pages)
+├── webpack.config.js     # Build configuration
+└── package.json
+```
+
+---
+
+## 📂 Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Blockchain** | Ergo (UTXO Model) |
+| **SDK** | Fleet SDK (`@fleet-sdk/core`) |
+| **Bundler** | Webpack 5 |
+| **Transpiler** | Babel |
+| **Wallet** | Nautilus DApp Connector |
+
+---
+
+## 🚀 Development
+
+```bash
+# Install dependencies
+npm install
+
+# Development server
+npm run dev-server
+
+# Production build
+npm run build
+```
+
+---
+
+<div align="center">
+  <sub>Developed by <a href="https://github.com/gammahazard">Vanguard Secure Solutions</a></sub>
+</div>
